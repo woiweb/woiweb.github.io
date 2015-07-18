@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>github版本库使用详细教程(命令行及图形界面版) | 我爱互联网</title>
+  <meta name="author" content="woiweb">
+  
+  <meta name="description" content="test">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="github版本库使用详细教程(命令行及图形界面版)"/>
+  <meta property="og:site_name" content="我爱互联网"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我爱互联网" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">我爱互联网</a></h1>
+  <h2><a href="/">前端技术，前端资讯</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/about">关于我</a></li>
+    
+      <li><a href="/contact">联系我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-07-24T22:21:25.000Z"><a href="/2013/07/25/github-gitshell-tutorial/">2013-07-25</a></time>
+      
+      
+  
+    <h1 class="title">github版本库使用详细教程(命令行及图形界面版)</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <div id="article_content"><br><div><br><br><a href="http://git-scm.com/" target="_blank" rel="external"><strong>Git</strong></a>是一个分布式的版本控制系统，作为开源代码库以及版本控制系统，<a href="https://github.com" target="_blank" rel="external"><strong>Github</strong></a>目前拥有140多万开发者用户。随着越来越多的应用程序转移到了云上，<a href="https://github.com/woiweb/jquery-panorama" target="_blank" rel="external"><strong>Github</strong></a>已经成为了管理软件开发以及发现已有代码的首选方法。<a id="more"></a><br>&gt; <strong>Git</strong>是一个分布式的版本控制系统，最初由Linus Torvalds编写，用作Linux内核代码的管理。在推出后，Git在其它项目中也取得了很大成功，尤其是在Ruby社区中。目前，包括 Rubinius和Merb在内的很多知名项目都使用了Git。Git同样可以被诸如Capistrano和Vlad the Deployer这样的部署工具所使用。<br>&gt; <div>如前所述，作为一个分布式的版本控制系统，在Git中并不存在主库这样的概念，每一份<a href="http://baike.baidu.com/view/548940.htm" target="_blank" rel="external">复制</a>出的库都可以独立使用，任何两个库之间的不一致之处都可以进行合并。</div><br>&gt; <div><strong>GitHub</strong>可以托管各种<a href="http://baike.baidu.com/view/1531489.htm" target="_blank" rel="external">git</a>库，并提供一个web界面，但与其它像 <a href="http://baike.baidu.com/view/1091461.htm" target="_blank" rel="external">SourceForge</a>或<a href="http://baike.baidu.com/view/2252816.htm" target="_blank" rel="external">Google Code</a>这 样的服务不同，<strong>GitHub</strong>的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将 代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。</div><br>&gt; <div><a href="http://baike.baidu.com/view/3366456.htm" target="_blank" rel="external">百度百科：http://baike.baidu.com/view/3366456.htm</a></div><br>今天我们就来学习github的使用，我们将用它来管理我们的代码，你会发现它的好处的，当然是要在本系列<strong>教程</strong>全部完成之后，所以请紧跟站长的步伐，今天是第一天，我们来学习如何在git上建立自己的版本仓库，并将代码上传到仓库中。<br><br>### <strong>教程【一】</strong><br><br>一、注册一个免费git帐号，可以无限建立访问权限为公共的版本仓库，注册地址：<a href="https://github.com/signup/free" title="注册git帐号" target="_blank" rel="external">https://github.com/signup/free</a><br><br>二、依次填写，用户名【昵称】、邮箱地址【用来登录】、密码，点击“creat an account”进行注册<br><br>三、点击右上方的”sign in”使用注册邮箱登录到git<br><br>四、点击右上方，你的用户名之后的图标，新建一个版本仓库<br><br>五、在“Repository name”一栏里填写版本仓库的名称，我们假设为”test”,Description栏是描述，可填可不填。<br><br>默认访问权限为公共，我们点击”Creating Repository”按钮，创建我们的第一个版本仓库。<br><br>接下来，我们需要在本地安装<strong>git客户端</strong>。<br><br>六、以windows为例，下载客户端：<a href="http://github-windows.s3.amazonaws.com/GitHubSetup.exe" target="_blank" rel="external">http://github-windows.s3.amazonaws.com/GitHubSetup.exe</a>，安装完成后，会在桌面上出现两个图标，Git Shell和GitHub。<br><br>七、那两个图标分别是命令行工具和图形界面，我们先来学习使用shell。<br><br>八、双击打开Git Shell,【win7用户使用管理员权限打开】<br><br>九、输入<code>git config --global user.name &quot;d1php&quot;</code>,这里的d1php是站长注册的用户名，你得改成你自己的<br><br>十、输入<code>git config --global user.email &quot;studyphp@yahoo.cn&quot;</code>,这里的邮箱也是是站长注册的邮箱，你得改成你自己的<br><br>十一、上面两步在客户端配置你的git帐户，下面我们在本地建立自己的版本仓库，站长把版本仓库建立在D盘。输入<code>cd d:</code>，切换到D盘目录。<br><br>十二、输入<code>mkdir test</code>，建立一个test目录，<strong><span style="color: #ff0000;">注意本地仓库名要和git中建立的仓库名一样</span></strong><br><br>十三、输入<code>cd test</code>，进入test目录<br><br>十四、输入<code>git init</code>,初始化版本仓库<br><br>十五、输入<code>touch README</code>,建立一个README文件<br><br>十六、用文本编辑器打开README文件，随便输入一点文件，比如：this is a test!<br><br>十七、输入<code>git add README</code>,将文件添加到上传队列<br><br>十八、输入<code>git commit -m &#39;test commit&#39;</code>，缓存提交，引号中的是对本次提交的描述，必须填写，不能为空<br><br>十九、输入<code>git remote add origin https://github.com/_d1php_/test.git</code>,注意url格式，d1php是你注册时的昵称，test是你刚才建立的版本仓库<br><br>二十、输入<code>git push origin master</code>，将README文件上传到版本库。这一步会一次让你填写你的git注册邮箱和密码，注意不要填错了<br><br>好了，到这一步，我们就完成了在线上和线下建立git版本库并上传文件的全部步骤。下节课我们来学习GitHub的使用，图形界面大家肯定更容易接受。<br><br></div>
+
+<h3 id="教程【二】"><strong>教程【二】</strong></h3><div><br><br>上一节课我们学习了<a href="http://www.phptogether.com/archives/12762" title="github使用教程【一】" target="_blank" rel="external">git shell的初步使用</a>，今天我们来学习github的图形界面。<br><br>一、双击桌面上的GitHub图标<br><br>二、在打开的界面中，点击Log In,图下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/11.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874746_2037.png" alt="" title="登录github"></a><br><br>三、在界面中输入用户名和密码，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/21.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874791_8711.png" alt="" title="2"></a><br><br>四、点击LOG IN，进入下图所示界面：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/3.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874809_3152.png" alt="" title="3"></a><br><br>五、点击’continue’，进入下图所示界面：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/4.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874834_8806.png" alt="" title="4"></a><br><br>六、提示我们没有找到本地版本仓库，这是因为git客户端默认是在C盘的git目录中查找版本库，而我们在上节课中建立的版本仓库在D盘，所以才找不到，没关系我们自己来查找，点击SKIP,进入下图所示界面：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/5.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874861_3711.png" alt="" title="5"></a><br><br>七、点击’tools’,在下拉菜单中选择’options’，进入下图所示界面：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/6.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874885_1616.png" alt="" title="6"></a><br><br>八、定位到D盘目录，然后点击SCAN FOR REPOSITORIE，扫描本地仓库,如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/7.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874905_8912.png" alt="" title="7"></a><br><br>九、很快就找到了我们上节课建立的版本仓库，test，点击左下方的add，再点击update,进入下图所示界面：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/8.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874921_7658.png" alt="" title="8"></a><br><br>十、进入D:/test目录，新建一个名为hello的txt文件，在其中输入hello world!,然后点击上图中的箭头打开版本库，进入下图所示界面：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/9.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874945_7460.png" alt="" title="9"></a><br><br>十一、左边栏会列出最新有改动的文件，右边第一栏填写对本次提交的描述，我们填’hello world’;第二栏是详细描述，可以不填。填完后点击’commit’提交,进入下图所示界面：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/10.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874966_6364.png" alt="" title="10"></a><br><br>十二、在右边我们可以看见刚才新建的提交:hello world,点击publish，将我们的改动上传到线上的git仓库中。<br><br>十三、稍等片刻，即可完成上传，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/111.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366874992_6872.png" alt="" title="11"></a><br><br>上传成功后，我们可以在左边看见刚才完成的提交。然后我们访问线上的仓库，检查一下：<a href="https://github.com/d1php/test" target="_blank" rel="external">https://github.com/d1php/test</a><br><br>是的，线上的test仓库又多了2个文件。<br><br>好了，到这里我们就已经使用GitHub图形界面完成了一次文件上传，下节课我们将回到gitshell的学习。我们将使用gitshell下载线上的版本仓库到本地，如果对本教程有疑惑可以联系站长哦。<br><br></div>
+
+<h3 id="教程【三】"><strong>教程【三】</strong></h3><div><br><br>今天我们来学习如何使用gitshell将线上的版本仓库下载到本地。我们为什么要把线上的仓库下载到本地，通常情况下是我们想要参与别人的项目。<br><br>github上面有一个项目：<a href="https://github.com/octocat/Spoon-Knife" target="_blank" rel="external">https://github.com/octocat/Spoon-Knife</a>，点击访问它。<br><br>现在我们想要参与这个项目，需要进行以下步骤：<br><br>一、访问上面的链接，点击fork按钮，<br><br>二、现在spoon-knife项目已经添加到你的线上版本仓库中了，我们要下载它。打开gitshell，输入<code>https://github.com/d1php/Spoon-Knife.git</code>，注意这里的d1php应该是你注册时的昵称，在此使用了站长的帐号。<br><br>三、前两节我们把版本仓库建立在了D盘根目录，因此这里默认是在D盘目录只想的shell，进入D盘，会发现多了一个spoon-knife目录，线上的源码已经下载下来了。<br><br>四、输入<code>cd spoon-knife</code><br><br>五、输入<code>git remote add upstream https://github.com/octocat/Spoon-Knife.git</code>，这里我们使用的是原项目的地址，确保我们可以随时跟踪到原项目<br><br>六、输入<code>git fetch upstream</code>，获取原项目最新的与你本地版本库不同的修改，但是不修改你的本地文件<br><br>好了，如何将线上仓库下载到本地就学习到这里，下节课我们学习如何建立版本分支。<br><br></div>
+
+<h3 id="教程【四】"><strong>教程【四】</strong></h3><div><br><br>学习，贵在持之以恒！欢迎大家跟站长继续学习github的使用，今天我们将学习如何使用 gitshell建立版本分支。如果你想要在原项目的基础上尝试一些新的思路或者开发新功能、修改等等，你可以建立原项目的一个分支，这样当进行修改时原 来的代码是不会受到影响的。我们前几节课建立一个test版本库，今天我们来为它建立 一个分支。<br><br>一、打开gitshell，输入 <code>cd test</code>，进入本地的test版本库<br><br>二、输入<code>git branch testbranch</code><br><br>三、输入<code>git checkout testbranch</code>，将testbranch分支设置为当前工作分支<br><br>四、输入<code>git add ./</code>，将test目录的所有文件添加至上传队列<br><br>五、输入<code>git commit -m &#39;newbranch&#39;</code>，缓存提交<br><br>六、输入<code>git remote add origin https://github.com/d1php/test.git</code>，配置上传目标仓库<br><br>七、输入<code>git push -u origin testbranch</code>，将文件上传到分支<br><br>然后访问：<a href="https://github.com/d1php/test/branches" target="_blank" rel="external">https://github.com/d1php/test/branches</a>，会发现多出了一个分支testbranch！<br><br>怎么样，今天的学习很轻松吧。明天我们将学习如何使用github图像界面将线上仓库中有改动的文件下载到本地，或者称之为“版本同步”。<br><br></div>
+
+<h3 id="教程【五】"><strong>教程【五】</strong></h3><div><br><br>今天我们学习如何使用github图形界面来让我们本地的版本仓库和线上的仓库保持一致，或者说如何把线上仓库中有改动的文件下载到本地。<br><br>一、首先，我们访问<a href="https://github.com/d1php/test" target="_blank" rel="external">https://github.com/d1php/test</a>。还记得我们在第一节课建立的hello.txt文件吗？如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/12.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875468_5510.png" alt="" title="1"></a><br><br>二、双击该文件，来到下图所示的界面：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/22.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875486_5885.png" alt="" title="2"></a><br><br>三、点击edit按钮，并对文本进行一些修改，如下图所示:<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/31.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875499_5999.png" alt="" title="3"></a><br><br>四、编辑完之后，点击页面最下方的commit changes按钮：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/41.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875517_7321.png" alt="" title="4"></a><br><br>五、打开github,如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/51.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875533_1443.png" alt="" title="5"></a><br><br>六、点击右边的箭头，打开本地仓库，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/61.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875547_2838.png" alt="" title="6"></a><br><br>七、github会自动读出最新的修改，并且上端会出现一个蓝色sync【sync是同步的意思】按钮。如果你没有看见蓝色的图标，可以点击F5刷新界面。现在我们点击sync按钮，这样github会将线上有改动的文件下载到本地，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/71.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875563_1779.png" alt="" title="7"></a><br><br>下载玩之后，蓝色的sync会变成灰色的in sync，这说明最新的文件已经下载到本地的仓库了，去检查一下吧！怎么样，没错吧。<br><br>感谢大家跟着站长进行了5天的学习，明天我们将继续学习github图形界面的使用，我们将学习如何使用github图形界面来建立一个版本库的分支。<br><br></div>
+
+<h3 id="教程【六】"><strong>教程【六】</strong></h3><div><br><br>学习，有时候就是一个漫长而枯燥的过程，但是当你走到终点时，回过头来再看看这段路，则会露出满不在乎的表情！今天我们学习如何使用gitgui来建立版本分支。<br><br>一、打开github图形界面,点击蓝色箭头打开我们之前建立的test仓库，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/13.png" target="_blank" rel="external"><img src="http://www.phptogether.com/wp-content/uploads/2012/07/13.png" alt="" title="1"></a><br><br>二、在打开的界面中，点击master按钮，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/23.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875692_2324.png" alt="" title="2"></a><br><br>三、在弹出的窗口中，点击manage按钮，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/32.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875708_6528.png" alt="" title="3"></a><br><br>四、进入分支界面，把鼠标移动到master分支上，并点击加号，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/42.png" target="_blank" rel="external"><img src="http://www.phptogether.com/wp-content/uploads/2012/07/42.png" alt="" title="4"></a><br><br>这会以master分支的文件为蓝本建立一个新的分支。<br><br>五、点击加号后，会弹出输入框，输入新分支的名称，并点击BRANCH按钮创建分支，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/52.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875736_3693.png" alt="" title="5"></a><br><br>站长输入是testbranch2，因为之前用gitshell建立一个testbranch分支。<br><br>六、创建完之后，会在当前页面显示新分支，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/62.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875750_8336.png" alt="" title="6"></a><br><br>点击publish按钮，将新分支发布到线上的git仓库中。发布完之后，publish按钮会变成unpublish，说明分支已经上传到线上的仓库中了。<br><br>七、访问<a href="https://github.com/d1php/test/branches" target="_blank" rel="external">https://github.com/d1php/test/branches</a>，查看分支情况，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/72.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875765_4872.png" alt="" title="7"></a><br><br>我们会发现，尽管显示有3个分支，但是在页面上只呈现了2个，新建立的没有出现，这是因为默认是读取master分支以及没有与master整合的 分支，而我们刚才创建的testbranch2分支是以master为蓝本，因此它们之间没有任何不同，所以才没有显示。我们点击branch下拉按钮， 可以看见我们刚才建立的testbranch2分支。<br><br>八、点击上图中的testbranch2按钮，进入下图所示界面：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/81.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875796_5873.png" alt="" title="8"></a><br><br>现在，我们可以在线上的版本仓库中看见我们刚才建立的分支了。<br><br>九、现在我们回到第六步的github图形界面，把鼠标移动到新建分支testbranch2上面，如下图所示：<br><br><a href="http://www.phptogether.com/wp-content/uploads/2012/07/91.png" target="_blank" rel="external"><img src="http://img.my.csdn.net/uploads/201304/25/1366875811_4264.png" alt="" title="9"></a><br><br>上图中第一个红圈包围的图标是用来删除分支的，它将同时删除本地和线上仓库的分支；第二个红圈仅仅删除线上仓库中的分支，本地分支会被保留。现在我们，点击第一个红圈包围的图标，将本地分支和线上分支同时删除。<br><br>十、访问<a href="https://github.com/d1php/test/branches" title="查看分支" target="_blank" rel="external">https://github.com/d1php/test/branches</a>，我们会发现刚才建立的testbranch2分支已经被删除了，gitgui中也不再显示该分支了。<br><br>ok，到此我们就学会了如何使用github图形界面创建、发布、删除分支，下节课我们将学习如何使用github图形界面对分支版本进行操作。<br><br></div><br><div>引用自：</div><br><div><a href="http://blog.csdn.net/ydcun/article/details/8849726" target="_blank" rel="external">http://blog.csdn.net/ydcun/article/details/8849726</a></div><br><div><a href="http://www.phptogether.com/archives/12762" target="_blank" rel="external">http://www.phptogether.com/archives/12762</a><br><a href="http://www.phptogether.com/archives/12767" target="_blank" rel="external">http://www.phptogether.com/archives/12767</a><br><a href="http://www.phptogether.com/archives/12787" target="_blank" rel="external">http://www.phptogether.com/archives/12787</a><br><a href="http://www.phptogether.com/archives/12793" target="_blank" rel="external">http://www.phptogether.com/archives/12793</a><br><a href="http://www.phptogether.com/archives/12800" target="_blank" rel="external">http://www.phptogether.com/archives/12800</a><br><a href="http://www.phptogether.com/archives/12814" target="_blank" rel="external">http://www.phptogether.com/archives/12814</a></div><br></div>
+      
+    </div>
+    <footer>
+      
+        <div class="clearfix">
+        
+  
+  <div class="categories">
+    <a href="/categories/前端观察/">前端观察</a>, <a href="/categories/前端观察/开发经验/">开发经验</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/git/">git</a>, <a href="/tags/github/">github</a>, <a href="/tags/gitshell/">gitshell</a>
+  </div>
+
+        </div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a></div>
+  
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/2013/07/04/add-alarms-to-digital-clock/" class="alignleft prev" title="向数字时钟添加闹铃">向数字时钟添加闹铃</a>
+  
+  
+    <a href="/2013/08/27/phantomjs-quick-use-tutorials/" class="alignright next" title="PhantomJS快速入门教程">PhantomJS快速入门教程</a>
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2013/07/25/github-gitshell-tutorial/" data-title="github版本库使用详细教程(命令行及图形界面版)" data-url="/2013/07/25/github-gitshell-tutorial/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"woiwebnet"};
+  (function() {
+    var ds = document.createElement('script'); 
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <script>
+  	function search(form) {
+  		if(form.wd.value == '') return false;
+
+  		window.open('//www.baidu.com/s?wd=' + encodeURIComponent(form.wd.value + ' site:woiweb.net'));
+  		return false;
+  	}
+  </script>
+  <form action="//www.baidu.com/s" method="get" accept-charset="utf-8" id="searchForm" onSubmit="return search(this);">
+    <input type="search" id="keyword" name="wd" results="0" placeholder="搜索">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li class="cat"><a href="/categories/前端观察/">前端观察</a><small>28</small></li>
+  
+    <li class="cat"><a href="/categories/免费资源/">免费资源</a><small>40</small></li>
+  
+    <li class="cat"><a href="/categories/开发经验/">开发经验</a><small>27</small></li>
+  
+    <li class="cat"><a href="/categories/前端工具/">前端工具</a><small>34</small></li>
+  
+    <li class="cat"><a href="/categories/Html-amp-Css/">Html &amp; Css</a><small>25</small></li>
+  
+    <li class="cat"><a href="/categories/设计灵感/">设计灵感</a><small>14</small></li>
+  
+    <li class="cat"><a href="/categories/JQuery/">JQuery</a><small>27</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <iframe id="weiboshow" width="100%" height="350" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/3d/" style="font-size: 12px;">3d</a> <a href="/tags/404/" style="font-size: 10px;">404</a> <a href="/tags/Authentication/" style="font-size: 10px;">Authentication</a> <a href="/tags/Firefox4/" style="font-size: 10px;">Firefox4</a> <a href="/tags/Gallery/" style="font-size: 11.33px;">Gallery</a> <a href="/tags/JQuery/" style="font-size: 19.33px;">JQuery</a> <a href="/tags/Tooltip/" style="font-size: 10px;">Tooltip</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/audio/" style="font-size: 10.67px;">audio</a> <a href="/tags/blog/" style="font-size: 10.67px;">blog</a> <a href="/tags/bootsrap/" style="font-size: 10px;">bootsrap</a> <a href="/tags/bootstrap/" style="font-size: 11.33px;">bootstrap</a> <a href="/tags/brush/" style="font-size: 10.67px;">brush</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cms/" style="font-size: 11.33px;">cms</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/development/" style="font-size: 12.67px;">development</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10.67px;">download</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/effects/" style="font-size: 10px;">effects</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/firebug/" style="font-size: 10px;">firebug</a> <a href="/tags/firefox/" style="font-size: 11.33px;">firefox</a> <a href="/tags/flash/" style="font-size: 13.33px;">flash</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/framework/" style="font-size: 10.67px;">framework</a> <a href="/tags/game/" style="font-size: 11.33px;">game</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/git/" style="font-size: 10.67px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitshell/" style="font-size: 10px;">gitshell</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/html/" style="font-size: 15.33px;">html</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/icon/" style="font-size: 14px;">icon</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10.67px;">ie6</a> <a href="/tags/iframe/" style="font-size: 12px;">iframe</a> <a href="/tags/ipad/" style="font-size: 10px;">ipad</a> <a href="/tags/iphone/" style="font-size: 10.67px;">iphone</a> <a href="/tags/java/" style="font-size: 11.33px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joomla/" style="font-size: 10px;">joomla</a> <a href="/tags/lightbox/" style="font-size: 10px;">lightbox</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/logo/" style="font-size: 13.33px;">logo</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/money/" style="font-size: 10px;">money</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/net/" style="font-size: 10px;">net</a> <a href="/tags/news/" style="font-size: 10px;">news</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/phone/" style="font-size: 10px;">phone</a> <a href="/tags/photoshop/" style="font-size: 14px;">photoshop</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/player/" style="font-size: 10.67px;">player</a> <a href="/tags/plugins/" style="font-size: 16px;">plugins</a> <a href="/tags/png/" style="font-size: 10px;">png</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/psd/" style="font-size: 11.33px;">psd</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-js/" style="font-size: 10px;">react.js</a> <a href="/tags/script/" style="font-size: 10px;">script</a> <a href="/tags/scrollbar/" style="font-size: 10px;">scrollbar</a> <a href="/tags/select/" style="font-size: 10px;">select</a> <a href="/tags/slide/" style="font-size: 10px;">slide</a> <a href="/tags/software/" style="font-size: 10px;">software</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/table/" style="font-size: 10px;">table</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/theme/" style="font-size: 14.67px;">theme</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tool/" style="font-size: 10.67px;">tool</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/tutorial/" style="font-size: 10.67px;">tutorial</a> <a href="/tags/tutorials/" style="font-size: 11.33px;">tutorials</a> <a href="/tags/ui/" style="font-size: 12.67px;">ui</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/wallpaper/" style="font-size: 10.67px;">wallpaper</a> <a href="/tags/web/" style="font-size: 10.67px;">web</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/windows/" style="font-size: 11.33px;">windows</a> <a href="/tags/wordpress/" style="font-size: 17.33px;">wordpress</a> <a href="/tags/xd/" style="font-size: 10.67px;">xd</a> <a href="/tags/中秋/" style="font-size: 10px;">中秋</a> <a href="/tags/免费资源/" style="font-size: 10.67px;">免费资源</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端工具/" style="font-size: 18.67px;">前端工具</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/播放器/" style="font-size: 10.67px;">播放器</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/设计灵感/" style="font-size: 18px;">设计灵感</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/跨域/" style="font-size: 12.67px;">跨域</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 woiweb
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script>
+$(window).load(function(){
+    $('#weiboshow').attr('src','http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1052981072&verifier=54068b01&dpc=1')
+});
+</script>
+
+  <img id="gotop" src="/img/gotop.png" />
+  <script>
+	!function(o){var t=1e3,n=o("#gotop"),c=500;n.hide(),o(window).scroll(function(){var c=o(document).scrollTop();c>t?o(n).stop().fadeTo(300,1):o(n).stop().fadeTo(300,0)}),o(n).click(function(){return o("html, body").animate({scrollTop:0},c),!1})}(jQuery);
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>

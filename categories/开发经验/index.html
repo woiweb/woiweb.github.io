@@ -1,0 +1,621 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开发经验 | 我爱互联网</title>
+  <meta name="author" content="woiweb">
+  
+  <meta name="description" content="test">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="我爱互联网"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我爱互联网" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">我爱互联网</a></h1>
+  <h2><a href="/">前端技术，前端资讯</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/about">关于我</a></li>
+    
+      <li><a href="/contact">联系我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-01-10T02:16:02.000Z"><a href="/2013/01/10/button-without-type-problem/">2013-01-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/01/10/button-without-type-problem/">button标签未指定类型导致的问题</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>今天部门同事分来一bug：新浪微博授权页面mobile版的错误提示黄签不能关闭，查找其原因，发现是黄签关闭后又被显示出来了，很奇怪，但很明显是有哪个地方又触发了它的show方法。然后在js中跟踪发现黄签关闭后又触发了表单提交方法，而提交表单会触发表单校验功能，校验功能会再次显示出黄签来。
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/01/10/button-without-type-problem/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-09-25T22:56:00.000Z"><a href="/2012/09/26/postmessage-usage-and-bug/">2012-09-26</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2012/09/26/postmessage-usage-and-bug/">postMessage的使用及BUG</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>postMessage是html5的一个新功能，它是实现<a href="http://www.woiweb.net/10-cross-domain-methods.html">跨域通信</a>的一种安全的策略，通过postMessage方式发送数据，通过在父子窗口添加onmessage事件进行监听，获取发送的数据，非常方便。
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/09/26/postmessage-usage-and-bug/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-07-10T18:22:37.000Z"><a href="/2012/07/11/iframe-loading-techniques-performance/">2012-07-11</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2012/07/11/iframe-loading-techniques-performance/">iframe异步加载技术及性能</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>我们会经常使用iframes来加载第三方的内容、广告或者<a href="http://www.woiweb.net/tag/plugins" title="插件">插件</a>。使用<a href="http://www.woiweb.net/tag/iframe" title="查看 iframe 中的全部文章"><strong>iframe</strong></a>是因为他可以和主页面并行加载，不会阻塞主页面。当然使用<a href="http://www.woiweb.net/tag/iframe" title="查看 iframe 中的全部文章"><strong>iframe</strong></a>也是有利有弊的：Steve Souders在他的blog里面有阐述：<a href="http://www.stevesouders.com/blog/2009/06/03/using-iframes-sparingly/">Using Iframes Sparingly</a>:
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/07/11/iframe-loading-techniques-performance/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-07-10T18:19:27.000Z"><a href="/2012/07/11/flash-wmode/">2012-07-11</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2012/07/11/flash-wmode/">Flash遮盖页面元素的解决方法</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在做web开发中可能会遇到<a href="http://www.woiweb.net/tag/flash" title="flash"><strong>flash</strong></a>遮挡<strong>页面</strong>中<strong>元素</strong>的情况，无论怎么设置<a href="http://www.woiweb.net/tag/flash" title="flash"><strong>flash</strong></a>容器和层的深度(z-index)也无济于事，现有的<strong>解决</strong>方案 是在插入<a href="http://www.woiweb.net/tag/flash" title="查看 flash 中的全部文章"><strong>flash</strong></a>的embed或object标签中加入”wmode”属性并设置为wmode=“transparent”或”opaque”，但 wmode属性到底是什么意义，为什么可以<strong>解决</strong>这个问题呢？
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/07/11/flash-wmode/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-07-10T18:08:00.000Z"><a href="/2012/07/11/ie9-create-iframe/">2012-07-11</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2012/07/11/ie9-create-iframe/">IE9下创建带name的iframe</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>前几天在开发SDK时发现用<a href="http://www.woiweb.net/js-iframe-ajax.html" title="Permanent Link to Js模拟Ajax无刷新提交">Js模拟Ajax无刷新提交</a>里面的方式，在<span class="wp_keywordlink_affiliate"><a href="http://www.woiweb.net/tag/ie9" title="查看 IE9 中的全部文章">IE9</a></span>下创建<strong>Iframe</strong>会出问题，抛出一个错误： DOM Exception: INVALID_CHARACTER_ERR (5) ，原来<span class="wp_keywordlink_affiliate"><a href="http://www.woiweb.net/tag/ie9" title="查看 IE9 中的全部文章">IE9</a></span>下不能用 document.createElement(‘&lt;iframe name=”uploadIframe”&gt;’);</p>
+<p>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/07/11/ie9-create-iframe/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-07-10T18:02:02.000Z"><a href="/2012/07/11/iframe-cross-domain/">2012-07-11</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2012/07/11/iframe-cross-domain/"> Iframe跨域通信完美解决方案</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><strong><a href="http://www.woiweb.net/tag/%e8%b7%a8%e5%9f%9f" title="查看 跨域 中的全部文章">跨域</a></strong>通信这个话题在之前已经提到总结过，关于<a href="http://www.woiweb.net/tag/%e8%b7%a8%e5%9f%9f" title="查看 跨域 中的全部文章">跨域</a>通信大家可以参考<a href="http://www.woiweb.net/same-origin-policy.html" title="Permanent Link to 同源策略">同源策略</a>，<a href="http://www.woiweb.net/10-cross-domain-methods.html" title="Permanent Link to 跨域资源共享的10种方式">跨域资源共享的10种方式</a>以及<a href="http://www.woiweb.net/communicate-with-iframe-in-ie.html" title="Permanent Link to IE下因设置document.domain而无法和Iframe通信的解决方法">IE下因设置document.domain而无法和Iframe通信的解决方法</a>。
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/07/11/iframe-cross-domain/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-02-10T00:56:09.000Z"><a href="/2012/02/10/same-origin-policy/">2012-02-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2012/02/10/same-origin-policy/">同源策略</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>受同源策略限制，<strong>JavaScript</strong>不能<strong>跨域</strong>!　这里提到了同源策略，那么什么是同源策略呢？</p>
+<p><strong>同源策略</strong>(Same Origin Policy)，它是由Netscape提出的一个著名的安全策略。 现在所有支持JavaScript 的浏览器都会使用这个策略。同源策略阻止从一个域上加载的脚本去获取或操作另一个域上的文档属性。也就是说，受到请求的 URL 的域必须与当前 Web 页面的域相同。这说明浏览器隔离来自不同源的内容，以防止它们之间的操作。
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/02/10/same-origin-policy/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-02-09T18:53:31.000Z"><a href="/2012/02/10/communicate-with-iframe-in-ie/">2012-02-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2012/02/10/communicate-with-iframe-in-ie/">IE下因设置document.domain而无法和Iframe通信的解决方法</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>最近在开发SDK的过程中发现IE下有个很怪异的问题：在同一域下，因在父页面上设置了document.domain，而导致无法正常和Iframe（也是同域下）进行通信，IE下抛出的错误是：<strong>SCRIPT5: 拒绝访问</strong>，导致无法操作iframe中的内容。
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2012/02/10/communicate-with-iframe-in-ie/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2011-12-12T19:33:12.000Z"><a href="/2011/12/13/js-iframe-ajax/">2011-12-13</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2011/12/13/js-iframe-ajax/">Js模拟Ajax无刷新提交</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>最近在做一个模拟Ajax提交的功能，原理很简单，就是动态创建一个form，并指定其target为页面中的一个隐藏的iframe，当form提交时会提交到这个iframe中，从而实现提交数据，而不刷新当前页面的功能，这个方法多用来做图片或文件上传的功能。
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2011/12/13/js-iframe-ajax/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2011-11-21T06:45:00.000Z"><a href="/2011/11/21/about-attributes-usage/">2011-11-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2011/11/21/about-attributes-usage/">关于attributes的使用</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>attributes用来检索属于该对象的属性的集合，它也是一个伪数组（可参考上篇文章：<a href="http://www.woiweb.net/htmlcollection-nodelist-transfer-to-array.html" title="Permanent Link to 将HTMLCollection/NodeList/伪数组转换成数组">将HTMLCollection/NodeList/伪数组转换成数组</a>），什么情况下会用到这个对象呢？比如有下面的一段html代码：
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2011/11/21/about-attributes-usage/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/" class="alignleft prev" title="undefined">undefined</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <script>
+  	function search(form) {
+  		if(form.wd.value == '') return false;
+
+  		window.open('//www.baidu.com/s?wd=' + encodeURIComponent(form.wd.value + ' site:woiweb.net'));
+  		return false;
+  	}
+  </script>
+  <form action="//www.baidu.com/s" method="get" accept-charset="utf-8" id="searchForm" onSubmit="return search(this);">
+    <input type="search" id="keyword" name="wd" results="0" placeholder="搜索">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li class="cat"><a href="/categories/前端观察/">前端观察</a><small>28</small></li>
+  
+    <li class="cat"><a href="/categories/免费资源/">免费资源</a><small>40</small></li>
+  
+    <li class="cat"><a href="/categories/开发经验/">开发经验</a><small>27</small></li>
+  
+    <li class="cat"><a href="/categories/前端工具/">前端工具</a><small>34</small></li>
+  
+    <li class="cat"><a href="/categories/Html-amp-Css/">Html &amp; Css</a><small>25</small></li>
+  
+    <li class="cat"><a href="/categories/设计灵感/">设计灵感</a><small>14</small></li>
+  
+    <li class="cat"><a href="/categories/JQuery/">JQuery</a><small>27</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <iframe id="weiboshow" width="100%" height="350" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/3d/" style="font-size: 12px;">3d</a> <a href="/tags/404/" style="font-size: 10px;">404</a> <a href="/tags/Authentication/" style="font-size: 10px;">Authentication</a> <a href="/tags/Firefox4/" style="font-size: 10px;">Firefox4</a> <a href="/tags/Gallery/" style="font-size: 11.33px;">Gallery</a> <a href="/tags/JQuery/" style="font-size: 19.33px;">JQuery</a> <a href="/tags/Tooltip/" style="font-size: 10px;">Tooltip</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/audio/" style="font-size: 10.67px;">audio</a> <a href="/tags/blog/" style="font-size: 10.67px;">blog</a> <a href="/tags/bootsrap/" style="font-size: 10px;">bootsrap</a> <a href="/tags/bootstrap/" style="font-size: 11.33px;">bootstrap</a> <a href="/tags/brush/" style="font-size: 10.67px;">brush</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cms/" style="font-size: 11.33px;">cms</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/development/" style="font-size: 12.67px;">development</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10.67px;">download</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/effects/" style="font-size: 10px;">effects</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/firebug/" style="font-size: 10px;">firebug</a> <a href="/tags/firefox/" style="font-size: 11.33px;">firefox</a> <a href="/tags/flash/" style="font-size: 13.33px;">flash</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/framework/" style="font-size: 10.67px;">framework</a> <a href="/tags/game/" style="font-size: 11.33px;">game</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/git/" style="font-size: 10.67px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitshell/" style="font-size: 10px;">gitshell</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/html/" style="font-size: 15.33px;">html</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/icon/" style="font-size: 14px;">icon</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10.67px;">ie6</a> <a href="/tags/iframe/" style="font-size: 12px;">iframe</a> <a href="/tags/ipad/" style="font-size: 10px;">ipad</a> <a href="/tags/iphone/" style="font-size: 10.67px;">iphone</a> <a href="/tags/java/" style="font-size: 11.33px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joomla/" style="font-size: 10px;">joomla</a> <a href="/tags/lightbox/" style="font-size: 10px;">lightbox</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/logo/" style="font-size: 13.33px;">logo</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/money/" style="font-size: 10px;">money</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/net/" style="font-size: 10px;">net</a> <a href="/tags/news/" style="font-size: 10px;">news</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/phone/" style="font-size: 10px;">phone</a> <a href="/tags/photoshop/" style="font-size: 14px;">photoshop</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/player/" style="font-size: 10.67px;">player</a> <a href="/tags/plugins/" style="font-size: 16px;">plugins</a> <a href="/tags/png/" style="font-size: 10px;">png</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/psd/" style="font-size: 11.33px;">psd</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-js/" style="font-size: 10px;">react.js</a> <a href="/tags/script/" style="font-size: 10px;">script</a> <a href="/tags/scrollbar/" style="font-size: 10px;">scrollbar</a> <a href="/tags/select/" style="font-size: 10px;">select</a> <a href="/tags/slide/" style="font-size: 10px;">slide</a> <a href="/tags/software/" style="font-size: 10px;">software</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/table/" style="font-size: 10px;">table</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/theme/" style="font-size: 14.67px;">theme</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tool/" style="font-size: 10.67px;">tool</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/tutorial/" style="font-size: 10.67px;">tutorial</a> <a href="/tags/tutorials/" style="font-size: 11.33px;">tutorials</a> <a href="/tags/ui/" style="font-size: 12.67px;">ui</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/wallpaper/" style="font-size: 10.67px;">wallpaper</a> <a href="/tags/web/" style="font-size: 10.67px;">web</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/windows/" style="font-size: 11.33px;">windows</a> <a href="/tags/wordpress/" style="font-size: 17.33px;">wordpress</a> <a href="/tags/xd/" style="font-size: 10.67px;">xd</a> <a href="/tags/中秋/" style="font-size: 10px;">中秋</a> <a href="/tags/免费资源/" style="font-size: 10.67px;">免费资源</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端工具/" style="font-size: 18.67px;">前端工具</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/播放器/" style="font-size: 10.67px;">播放器</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/设计灵感/" style="font-size: 18px;">设计灵感</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/跨域/" style="font-size: 12.67px;">跨域</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 woiweb
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script>
+$(window).load(function(){
+    $('#weiboshow').attr('src','http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1052981072&verifier=54068b01&dpc=1')
+});
+</script>
+
+  <img id="gotop" src="/img/gotop.png" />
+  <script>
+	!function(o){var t=1e3,n=o("#gotop"),c=500;n.hide(),o(window).scroll(function(){var c=o(document).scrollTop();c>t?o(n).stop().fadeTo(300,1):o(n).stop().fadeTo(300,0)}),o(n).click(function(){return o("html, body").animate({scrollTop:0},c),!1})}(jQuery);
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>跨域资源共享的10种方式 | 我爱互联网</title>
+  <meta name="author" content="woiweb">
+  
+  <meta name="description" content="test">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="跨域资源共享的10种方式"/>
+  <meta property="og:site_name" content="我爱互联网"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我爱互联网" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">我爱互联网</a></h1>
+  <h2><a href="/">前端技术，前端资讯</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/about">关于我</a></li>
+    
+      <li><a href="/contact">联系我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2011-01-25T22:00:01.000Z"><a href="/2011/01/26/10-cross-domain-methods/">2011-01-26</a></time>
+      
+      
+  
+    <h1 class="title">跨域资源共享的10种方式</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在客户端编程语言中，如JavaScript和ActionScript，<a href="http://www.woiweb.net/same-origin-policy.html">同源策略</a>是一个很重要的安全理念，它在保证数据的安全性方面有着重要的意义。<a href="http://www.woiweb.net/same-origin-policy.html">同 源策略</a>规定<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>之间的脚本是隔离的，一个域的脚本不能访问和操作另外一个域的绝大部分属性和方法。那么什么叫相同域，什么叫不同的域呢？<a id="more"></a></p>
+<h3 id="同源策略">同源策略</h3><p>在客户端编程语言中，如JavaScript和ActionScript，同源策略是一个很重要的安全理念，它在保证数据的安全性方面有着重要的意义。同源策略规定<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>之间的脚本是隔离的，一个域的脚本不能访问和操作另外一个域的绝大部分属性和方法。</p>
+<p>那么什么叫相同域，什么叫不同的域呢？当两个域具有相同的协议(如http), 相同的端口(如80)，相同的host（如www.example.org)，那么我们就可以认为它们是相同的域。比如<a href="http://www.example.org/和http://www.example.org/sub/是同域，而http://www.example.org" target="_blank" rel="external">http://www.example.org/和http://www.example.org/sub/是同域，而http://www.example.org</a>, <a href="https://www.example.org" target="_blank" rel="external">https://www.example.org</a>, <a href="http://www.example.org:8080" target="_blank" rel="external">http://www.example.org:8080</a>, <a href="http://sub.example.org中的任何两个都将构成[跨域](http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F)。同源策略还应该对一些特殊情况做处理，比如限制file协议下脚本的访问权限。本地的HTML文件在浏览器中是通过file协议打开的，如果脚本能通过file协议访问到硬盘上其它任意文件，就会出现安全隐患，目前IE8还有这样的隐患。" target="_blank" rel="external">http://sub.example.org中的任何两个都将构成[跨域](http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F)。同源策略还应该对一些特殊情况做处理，比如限制file协议下脚本的访问权限。本地的HTML文件在浏览器中是通过file协议打开的，如果脚本能通过file协议访问到硬盘上其它任意文件，就会出现安全隐患，目前IE8还有这样的隐患。</a></p>
+<p>受到同源策略的影响，<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>资源共享就会受到制约。但是随着人们的实践和浏览器的进步，目前在<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>请求的技巧上，有很多宝贵经验的沉淀和积累。这里我把<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>资源共享分成两种，一种是单向的数据请求，还有一种是双向的消息通信。接下来我将罗列出常见的一些<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>方式，以下<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>实例的源代码可以从<a href="http://github.com/colorhook/crossdomain" target="_blank" rel="external">这里获得</a>。</p>
+<h3 id="单向跨域">单向<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a></h3><h4 id="JSONP">JSONP</h4><p>JSONP (JSON with Padding)是一个简单高效的<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>方式，HTML中的script标签可以加载并执行其他域的JavaScript，于是我们可以通过script标记来动态加载其他域的资源。例如我要从域A的页面pageA加载域B的数据，那么在域B的页面pageB中我以JavaScript的形式声明pageA需要的数据，然后在pageA中用script标签把pageB加载进来，那么pageB中的脚本就会得以执行。JSONP在此基础上加入了回调函数，pageB加载完之后会执行pageA中定义的函数，所需要的数据会以参数的形式传递给该函数。JSONP易于实现，但是也会存在一些安全隐患，如果第三方的脚本随意地执行，那么它就可以篡改页面内容，截获敏感数据。但是在受信任的双方传递数据，JSONP是非常合适的选择。</p>
+<h4 id="Flash_URLLoader">Flash URLLoader</h4><p>Flash有自己的一套安全策略，服务器可以通过crossdomain.xml文件来声明能被哪些域的SWF文件访问，SWF也可以通过API来确定自身能被哪些域的SWF加载。当<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>访问资源时，例如从域www.a.com请求域www.b.com上的数据，我们可以借助Flash来发送HTTP请求。首先，修改域www.b.com上的crossdomain.xml(一般存放在根目录，如果没有需要手动创建) ，把www.a.com加入到白名单。其次，通过Flash URLLoader发送HTTP请求，最后，通过Flash API把响应结果传递给JavaScript。Flash URLLoader是一种很普遍的<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>解决方案，不过需要支持iOS的话，这个方案就无能为力了。</p>
+<h4 id="Access_Control">Access Control</h4><p>Access Control是比较超越的<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>方式，目前只在很少的浏览器中得以支持，这些浏览器可以发送一个<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>的HTTP请求（Firefox, Google Chrome等通过XMLHTTPRequest实现，IE8下通过XDomainRequest实现），请求的响应必须包含一个Access-Control-Allow-Origin的HTTP响应头，该响应头声明了请求域的可访问权限。例如www.a.com对www.b.com下的asset.php发送了一个<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>的HTTP请求，那么asset.php必须加入如下的响应头：</p>
+<pre lang="php">header("Access-Control-Allow-Origin: http://www.a.com");</pre>
+
+<h4 id="window-name">window.name</h4><p>window对象的name属性是一个很特别的属性，当该window的location变化，然后重新加载，它的name属性可以依然保持不变。那么我们可以在页面A中用iframe加载其他域的页面B，而页面B中用JavaScript把需要传递的数据赋值给window.name，iframe加载完成之后，页面A修改iframe的地址，将其变成同域的一个地址，然后就可以读出window.name的值了。这个方式非常适合单向的数据请求，而且协议简单、安全。不会像JSONP那样不做限制地执行外部脚本。</p>
+<h4 id="server_proxy">server proxy</h4><p>在数据提供方没有提供对JSONP协议或者window.name协议的支持，也没有对其它域开放访问权限时，我们可以通过server proxy的方式来抓取数据。例如当www.a.com域下的页面需要请求www.b.com下的资源文件asset.txt时，直接发送一个指向www.b.com/asset.txt的ajax请求肯定是会被浏览器阻止。这时，我们在www.a.com下配一个代理，然后把ajax请求绑定到这个代理路径下，例如www.a.com/proxy/, 然后这个代理发送HTTP请求访问www.b.com下的asset.txt，<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>的HTTP请求是在服务器端进行的，客户端并没有产生<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>的ajax请求。这个<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>方式不需要和目标资源签订协议，带有侵略性，另外需要注意的是实践中应该对这个代理实施一定程度的保护，比如限制他人使用或者使用频率。</p>
+<h3 id="双向跨域">双向<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a></h3><h4 id="document-domain">document.domain</h4><p>通过修改document的domain属性，我们可以在域和子域或者不同的子域之间通信。同域策略认为域和子域隶属于不同的域，比如www.a.com和sub.a.com是不同的域，这时，我们无法在www.a.com下的页面中调用sub.a.com中定义的JavaScript方法。但是当我们把它们document的domain属性都修改为a.com，浏览器就会认为它们处于同一个域下，那么我们就可以互相调用对方的method来通信了。</p>
+<h4 id="FIM_–_Fragment_Identitier_Messaging">FIM – Fragment Identitier Messaging</h4><p>不同的域之间，JavaScript只能做很有限的访问和操作，其实我们利用这些有限的访问权限就可以达到<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>通信的目的了。FIM (Fragment Identitier Messaging)就是在这个大前提下被发明的。父窗口可以对iframe进行URL读写，iframe也可以读写父窗口的URL，URL有一部分被称为frag，就是#号及其后面的字符，它一般用于浏览器锚点定位，Server端并不关心这部分，应该说HTTP请求过程中不会携带frag，所以这部分的修改不会产生HTTP请求，但是会产生浏览器历史记录。FIM的原理就是改变URL的frag部分来进行双向通信。每个window通过改变其他window的location来发送消息，并通过监听自己的URL的变化来接收消息。这个方式的通信会造成一些不必要的浏览器历史记录，而且有些浏览器不支持onhashchange事件，需要轮询来获知URL的改变，最后，URL在浏览器下有长度限制，这个制约了每次传送的数据量。</p>
+<h4 id="Flash_LocalConnection">Flash LocalConnection</h4><p>页面上的双向通信也可以通过Flash来解决，Flash API中有LocalConnection这个类，该类允许两个SWF之间通过进程通信，这时SWF可以播放在独立的Flash Player或者AIR中，也可以嵌在HTML页面或者是PDF中。遵循这个通信原则，我们可以在不同域的HTML页面各自嵌套一个SWF来达到相互传递数据的目的了。SWF通过LocalConnection交换数据是很快的，但是每次的数据量有40kb的大小限制。用这种方式来<a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>通信过于复杂，而且需要了2个SWF文件，实用性不强。</p>
+<h4 id="window-postMessage">window.postMessage</h4><p>window.postMessage是HTML5定义的一个<a href="http://dev.w3.org/html5/postmsg/" target="_blank" rel="external">很新的方法</a>，这个方法可以很方便地跨window通信。由于它是一个很新的方法，所以在很旧和比较旧的浏览器中都无法使用。</p>
+<h4 id="Cross_Frame">Cross Frame</h4><p>Cross Frame是FIM的一个变种，它借助了一个空白的iframe，不会产生多余的浏览器历史记录，也不需要轮询URL的改变，在可用性和性能上都做了很大的改观。它的基本原理大致是这样的，假设在域www.a.com上有页面A.html和一个空白代理页面proxyA.html, 另一个域www.b.com上有个页面B.html和一个空白代理页面proxyB.html，A.html需要向B.html中发送消息时，页面会创建一个隐藏的iframe, iframe的src指向proxyB.html并把message作为URL frag，由于B.html和proxyB.html是同域，所以在iframe加载完成之后，B.html可以获得iframe的URL，然后解析出message，并移除该iframe。当B.html需要向A.html发送消息时，原理一样。Cross Frame是很好的双向通信方式，而且安全高效，但是它在Opera中无法使用，不过在Opera下面我们可以使用更简单的window.postMessage来代替。</p>
+<h3 id="总结">总结</h3><p><a href="http://www.woiweb.net/tag/%E8%B7%A8%E5%9F%9F">跨域</a>的方法很多，不同的应用场景我们都可以找到一个最合适的解决方案。比如单向的数据请求，我们应该优先选择JSONP或者window.name，双向通信我们采取Cross Frame，在未与数据提供方没有达成通信协议的情况下我们也可以用server proxy的方式来抓取数据。</p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="clearfix">
+        
+  
+  <div class="categories">
+    <a href="/categories/开发经验/">开发经验</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/development/">development</a>, <a href="/tags/javascript/">javascript</a>, <a href="/tags/跨域/">跨域</a>
+  </div>
+
+        </div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a></div>
+  
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/2011/01/20/45-interesting-beautiful-ipad-iphone-apps-websites/" class="alignleft prev" title="45个有趣而漂亮的iPhone/iPad应用网站 ">45个有趣而漂亮的iPhone/iPad应用网站 </a>
+  
+  
+    <a href="/2011/01/30/65-free-high-quality-psd-files-for-download/" class="alignright next" title="65个免费的高质量的PSD文件下载">65个免费的高质量的PSD文件下载</a>
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2011/01/26/10-cross-domain-methods/" data-title="跨域资源共享的10种方式" data-url="/2011/01/26/10-cross-domain-methods/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"woiwebnet"};
+  (function() {
+    var ds = document.createElement('script'); 
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <script>
+  	function search(form) {
+  		if(form.wd.value == '') return false;
+
+  		window.open('//www.baidu.com/s?wd=' + encodeURIComponent(form.wd.value + ' site:woiweb.net'));
+  		return false;
+  	}
+  </script>
+  <form action="//www.baidu.com/s" method="get" accept-charset="utf-8" id="searchForm" onSubmit="return search(this);">
+    <input type="search" id="keyword" name="wd" results="0" placeholder="搜索">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li class="cat"><a href="/categories/前端观察/">前端观察</a><small>28</small></li>
+  
+    <li class="cat"><a href="/categories/免费资源/">免费资源</a><small>40</small></li>
+  
+    <li class="cat"><a href="/categories/开发经验/">开发经验</a><small>27</small></li>
+  
+    <li class="cat"><a href="/categories/前端工具/">前端工具</a><small>34</small></li>
+  
+    <li class="cat"><a href="/categories/Html-amp-Css/">Html &amp; Css</a><small>25</small></li>
+  
+    <li class="cat"><a href="/categories/设计灵感/">设计灵感</a><small>14</small></li>
+  
+    <li class="cat"><a href="/categories/JQuery/">JQuery</a><small>27</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <iframe id="weiboshow" width="100%" height="350" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/3d/" style="font-size: 12px;">3d</a> <a href="/tags/404/" style="font-size: 10px;">404</a> <a href="/tags/Authentication/" style="font-size: 10px;">Authentication</a> <a href="/tags/Firefox4/" style="font-size: 10px;">Firefox4</a> <a href="/tags/Gallery/" style="font-size: 11.33px;">Gallery</a> <a href="/tags/JQuery/" style="font-size: 19.33px;">JQuery</a> <a href="/tags/Tooltip/" style="font-size: 10px;">Tooltip</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/audio/" style="font-size: 10.67px;">audio</a> <a href="/tags/blog/" style="font-size: 10.67px;">blog</a> <a href="/tags/bootsrap/" style="font-size: 10px;">bootsrap</a> <a href="/tags/bootstrap/" style="font-size: 11.33px;">bootstrap</a> <a href="/tags/brush/" style="font-size: 10.67px;">brush</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cms/" style="font-size: 11.33px;">cms</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/development/" style="font-size: 12.67px;">development</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10.67px;">download</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/effects/" style="font-size: 10px;">effects</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/firebug/" style="font-size: 10px;">firebug</a> <a href="/tags/firefox/" style="font-size: 11.33px;">firefox</a> <a href="/tags/flash/" style="font-size: 13.33px;">flash</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/framework/" style="font-size: 10.67px;">framework</a> <a href="/tags/game/" style="font-size: 11.33px;">game</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/git/" style="font-size: 10.67px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitshell/" style="font-size: 10px;">gitshell</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/html/" style="font-size: 15.33px;">html</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/icon/" style="font-size: 14px;">icon</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10.67px;">ie6</a> <a href="/tags/iframe/" style="font-size: 12px;">iframe</a> <a href="/tags/ipad/" style="font-size: 10px;">ipad</a> <a href="/tags/iphone/" style="font-size: 10.67px;">iphone</a> <a href="/tags/java/" style="font-size: 11.33px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joomla/" style="font-size: 10px;">joomla</a> <a href="/tags/lightbox/" style="font-size: 10px;">lightbox</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/logo/" style="font-size: 13.33px;">logo</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/money/" style="font-size: 10px;">money</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/net/" style="font-size: 10px;">net</a> <a href="/tags/news/" style="font-size: 10px;">news</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/phone/" style="font-size: 10px;">phone</a> <a href="/tags/photoshop/" style="font-size: 14px;">photoshop</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/player/" style="font-size: 10.67px;">player</a> <a href="/tags/plugins/" style="font-size: 16px;">plugins</a> <a href="/tags/png/" style="font-size: 10px;">png</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/psd/" style="font-size: 11.33px;">psd</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-js/" style="font-size: 10px;">react.js</a> <a href="/tags/script/" style="font-size: 10px;">script</a> <a href="/tags/scrollbar/" style="font-size: 10px;">scrollbar</a> <a href="/tags/select/" style="font-size: 10px;">select</a> <a href="/tags/slide/" style="font-size: 10px;">slide</a> <a href="/tags/software/" style="font-size: 10px;">software</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/table/" style="font-size: 10px;">table</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/theme/" style="font-size: 14.67px;">theme</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tool/" style="font-size: 10.67px;">tool</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/tutorial/" style="font-size: 10.67px;">tutorial</a> <a href="/tags/tutorials/" style="font-size: 11.33px;">tutorials</a> <a href="/tags/ui/" style="font-size: 12.67px;">ui</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/wallpaper/" style="font-size: 10.67px;">wallpaper</a> <a href="/tags/web/" style="font-size: 10.67px;">web</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/windows/" style="font-size: 11.33px;">windows</a> <a href="/tags/wordpress/" style="font-size: 17.33px;">wordpress</a> <a href="/tags/xd/" style="font-size: 10.67px;">xd</a> <a href="/tags/中秋/" style="font-size: 10px;">中秋</a> <a href="/tags/免费资源/" style="font-size: 10.67px;">免费资源</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端工具/" style="font-size: 18.67px;">前端工具</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/播放器/" style="font-size: 10.67px;">播放器</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/设计灵感/" style="font-size: 18px;">设计灵感</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/跨域/" style="font-size: 12.67px;">跨域</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 woiweb
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script>
+$(window).load(function(){
+    $('#weiboshow').attr('src','http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1052981072&verifier=54068b01&dpc=1')
+});
+</script>
+
+  <img id="gotop" src="/img/gotop.png" />
+  <script>
+	!function(o){var t=1e3,n=o("#gotop"),c=500;n.hide(),o(window).scroll(function(){var c=o(document).scrollTop();c>t?o(n).stop().fadeTo(300,1):o(n).stop().fadeTo(300,0)}),o(n).click(function(){return o("html, body").animate({scrollTop:0},c),!1})}(jQuery);
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>IE6-7下的调试利器-IE WebDeveloper使用教程 | 我爱互联网</title>
+  <meta name="author" content="woiweb">
+  
+  <meta name="description" content="test">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="IE6-7下的调试利器-IE WebDeveloper使用教程"/>
+  <meta property="og:site_name" content="我爱互联网"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我爱互联网" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">我爱互联网</a></h1>
+  <h2><a href="/">前端技术，前端资讯</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/about">关于我</a></li>
+    
+      <li><a href="/contact">联系我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2011-12-04T22:36:33.000Z"><a href="/2011/12/05/ie-webdeveloper-tutorail/">2011-12-05</a></time>
+      
+      
+  
+    <h1 class="title">IE6-7下的调试利器-IE WebDeveloper使用教程</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>IE WebDeveloper一款用于IE浏览器的插件，允许直接地在浏览器窗口中检查、编辑HTML DOM，查看网页元素树形结构和元素样式，调试JavaScript脚本，监听DHTML事件和HTTP请求数量等。主要用于版本较低的IE浏览器，如：IE6，IE7。<a id="more"></a></p>
+<h3 id="一、概述">一、概述</h3><p>系统需求：</p>
+<ul>
+<li>操作系统：window9x+、window200+、vista、window7等常用操作系统。</li>
+<li>Internet Explorer 5.5 或更高级别的IE浏览器<br>下载地址：<a href="http://www.ieinspector.com/dominspector/download.html" target="_blank" rel="external">IE WebDeveloper V2</a></li>
+</ul>
+<h3 id="二、安装步骤">二、安装步骤</h3><p>IE WebDeveloper的安装非常地简单，你只需简单地点击“下一步”即可，如下图：</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/1.png" alt="1.png"></p>
+<p>点击“next”。</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/2.png" alt="2.png"></p>
+<p>选择“接受协议”。</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/3.png" alt="3.png"></p>
+<p>选择安装路径，一路next。</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/4.png" alt="4.png"></p>
+<p>你可能还没反应过来，不错，它确实已经安装完成了，就这么简单。</p>
+<h3 id="三、使用_IE_WebDeveloper">三、使用 IE WebDeveloper</h3><h4 id="1、启动IE_WebDeveloper">1、启动IE WebDeveloper</h4><p>一旦你安装了IE WebDeveloper，它现在就可以在浏览器窗口的下部窗格中显示了。你可以使用Internet Explorer工具栏按钮来显示或隐藏的IE WebDeveloper。</p>
+<p>打开浏览器，在IE菜单栏中会存在其图标，点击即可执行。</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/5.png" alt="5.png"></p>
+<p>如果不存在该图标你可以选择”查看-&gt;浏览器栏-&gt;IE WebDeveloper V2”，点击即可了。</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/6.png" alt="6.png"></p>
+<p>如果你更想让IE WebDeveloper的图标在浏览器的工具栏上显示，你可以选择“查看-&gt;工具栏-&gt;自定义”，将其图标添加至右侧当前工具栏按钮窗口即可，如下图所示：</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/7.png" alt="7.png"></p>
+<p>IE WebDeveloper运行界面如下图所示：</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/8.png" alt="8.png"></p>
+<p>(运行效果图)</p>
+<h4 id="2、面板介绍">2、面板介绍</h4><ul>
+<li>Webpage Inspector(页面查看器)<br><img src="http://attach.sinaapp.com/webdeveloper/9.png" alt="9.png"></li>
+</ul>
+<p>(效果图)</p>
+<p>你可以在浏览器窗口中进行查看DOM元素结构、而且你还可以进行动态编辑，页面效果会实时渲染出来，其功能包括：</p>
+<p><dl><dd><strong>树形结构浏览</strong></dd></dl>树形结构视图显示了全面的网页结构信息。它显示了表单，meta标签，链接，图像，脚本，样式表，applet，XML，Applet/ActiveX对象的详细信息。</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/10.png" alt="10.png"></p>
+<ul>
+<li>HTML DOM查看<br>可直接在浏览器窗口中进行HTML DOM查看，遍历，甚至动态更新。</li>
+</ul>
+<p><img src="http://attach.sinaapp.com/webdeveloper/11.png" alt="11.png"></p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/12.png" alt="12.png"></p>
+<p><dl><dd><strong>样式表</strong></dd></dl>允许您跟踪各种样式表，如链接进来的样式表，嵌入式样式表，导入的样式表等。</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/13.png" alt="13.png"></p>
+<p><dl><dd><strong>检查HTML DOM元素</strong></dd></dl>检查HTML DOM元素，并通过在网页上点击的获取HTML DOM元素节点全称。通过ID /名称，标签名称/类或属性的文本搜索特定元素。</p>
+<p><dl><dd><strong>各种查看功能</strong></dd></dl>DOM节点，Document对象，表单，链接，框架……</p>
+<p><dl><dd><strong>网页验证</strong></dd></dl>提供在线验证W3C HTML, HTML Tidy, CSS, Feed, Links, WAI, Section 508 和 P3P，还可以验证本地的HTML , CSS文件。</p>
+<p><dl><dd><strong>各种在线工具</strong></dd></dl>域名注册网站查询，ping，路由跟踪，DNS，网站信息，IP信息，网页速度测试等</p>
+<p><dl><dd><strong>源代码查看</strong></dd></dl>查看网页HTML源代码。</p>
+<ul>
+<li>Script Console(脚本控制台)<br><img src="http://attach.sinaapp.com/webdeveloper/14.png" alt="14.png"></li>
+</ul>
+<p>(效果图)</p>
+<p>使用脚本控制台可以计算表达式，获取HTML DOM对象，给变量赋值，测试比较运算符，执行数学运算。当一个JavaScript遇到脚本错误时会将错误的详细信息将输出到脚本控制台。</p>
+<p>使用控制台，你可以定位到代码中导致错误的行。另外可以使用单行命令行来运行JavaScript代码，还可以使用“Run Script”对话框，一次执行多行脚本，如下图所示：</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/15.png" alt="15.png"></p>
+<p>在开发中，可以在Javascript代码中用 console.log(‘信息’)来输出debug信息，和其他Log组件一样console对象同样也包括info，warn，log，error等方法，你可以根据需要选择使用，另外它还可以使用断言console.assertEquals来进行测试比较，其详细的API使用请参数官方地址：<a href="http://www.ieinspector.com/dominspector/consoleapi/test.html" target="_blank" rel="external">http://www.ieinspector.com/dominspector/consoleapi/test.html</a></p>
+<ul>
+<li>Source Explorer(源码查看器)<br><img src="http://attach.sinaapp.com/webdeveloper/16.png" alt="16.png"></li>
+</ul>
+<p>在这里你可以查看当前页的HTM、CSS和Javascript文件的源代码，它能够列出Javascript文件中的函数和变量名，还可以将网页源码保存成临时的html文件用于编辑和调试，用16进制方式查看源码，高亮显示JavaScript、html、css、xml等。</p>
+<ul>
+<li>Event Log<br><img src="http://attach.sinaapp.com/webdeveloper/17.png" alt="17.png"></li>
+</ul>
+<p>它能够记录网页浏览器、HTML文档、HTML窗口或用Inspect所选HTML元素结点的事件触发列表。可以在事件过滤器(Event Filter)中进行事件过滤，如下图所示：</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/18.png" alt="18.png"></p>
+<ul>
+<li>HTTP Monitor<br>它可以查看和网络服务器相交互的HTTP信息，相当于Firebug的网络（net）功能，可以查看http请求信息，包括请求的头信息及返回的数据等，对于AJAX开发很有帮助。</li>
+</ul>
+<p>另外的附加功能如：清除浏览器缓存和Cookie、对http请求进行过滤等。</p>
+<p><img src="http://attach.sinaapp.com/webdeveloper/19.png" alt="19.png"></p>
+<h4 id="3、注册IE_WebDeveloper">3、注册IE WebDeveloper</h4><p>说到现在IE WebDeveloper的功能基本说完了，更加详细的请参考其帮助文件，安装完成后就有哦。</p>
+<p>现在你感觉到这个软件的好处了吧，在IE6，7下它大显身手，不过，它可不是免费的哦。。。</p>
+<p>收费？那怎么行！</p>
+<p>提供两个KEY，大家直接注册就可无限制的用了。破解真好！</p>
+<pre>88741-1806DF295FB7CA3E
+88145-1ADD6AA24F22DE00</pre>
+
+<h3 id="四、相关资料">四、相关资料</h3><p>官网：<a href="http://www.ieinspector.com/" target="_blank" rel="external">http://www.ieinspector.com/</a></p>
+<p>CHM帮助文件：安装IE WebDeveloper后就会有，图文并茂，不过是英文版的。</p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="clearfix">
+        
+  
+  <div class="categories">
+    <a href="/categories/前端工具/">前端工具</a>, <a href="/categories/前端工具/开发经验/">开发经验</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/ie6/">ie6</a>, <a href="/tags/前端工具/">前端工具</a>, <a href="/tags/调试/">调试</a>
+  </div>
+
+        </div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a></div>
+  
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/2011/11/29/op-37-resources-logo-designs-inspiration/" class="alignleft prev" title="推荐37个获取LOGO设计灵感的网站">推荐37个获取LOGO设计灵感的网站</a>
+  
+  
+    <a href="/2011/12/08/11-javascript-color-pickers-plugins/" class="alignright next" title="11个javascript拾色器插件">11个javascript拾色器插件</a>
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2011/12/05/ie-webdeveloper-tutorail/" data-title="IE6-7下的调试利器-IE WebDeveloper使用教程" data-url="/2011/12/05/ie-webdeveloper-tutorail/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"woiwebnet"};
+  (function() {
+    var ds = document.createElement('script'); 
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <script>
+  	function search(form) {
+  		if(form.wd.value == '') return false;
+
+  		window.open('//www.baidu.com/s?wd=' + encodeURIComponent(form.wd.value + ' site:woiweb.net'));
+  		return false;
+  	}
+  </script>
+  <form action="//www.baidu.com/s" method="get" accept-charset="utf-8" id="searchForm" onSubmit="return search(this);">
+    <input type="search" id="keyword" name="wd" results="0" placeholder="搜索">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li class="cat"><a href="/categories/前端观察/">前端观察</a><small>28</small></li>
+  
+    <li class="cat"><a href="/categories/免费资源/">免费资源</a><small>40</small></li>
+  
+    <li class="cat"><a href="/categories/开发经验/">开发经验</a><small>27</small></li>
+  
+    <li class="cat"><a href="/categories/前端工具/">前端工具</a><small>34</small></li>
+  
+    <li class="cat"><a href="/categories/Html-amp-Css/">Html &amp; Css</a><small>25</small></li>
+  
+    <li class="cat"><a href="/categories/设计灵感/">设计灵感</a><small>14</small></li>
+  
+    <li class="cat"><a href="/categories/JQuery/">JQuery</a><small>27</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <iframe id="weiboshow" width="100%" height="350" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/3d/" style="font-size: 12px;">3d</a> <a href="/tags/404/" style="font-size: 10px;">404</a> <a href="/tags/Authentication/" style="font-size: 10px;">Authentication</a> <a href="/tags/Firefox4/" style="font-size: 10px;">Firefox4</a> <a href="/tags/Gallery/" style="font-size: 11.33px;">Gallery</a> <a href="/tags/JQuery/" style="font-size: 19.33px;">JQuery</a> <a href="/tags/Tooltip/" style="font-size: 10px;">Tooltip</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/audio/" style="font-size: 10.67px;">audio</a> <a href="/tags/blog/" style="font-size: 10.67px;">blog</a> <a href="/tags/bootsrap/" style="font-size: 10px;">bootsrap</a> <a href="/tags/bootstrap/" style="font-size: 11.33px;">bootstrap</a> <a href="/tags/brush/" style="font-size: 10.67px;">brush</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cms/" style="font-size: 11.33px;">cms</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/development/" style="font-size: 12.67px;">development</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10.67px;">download</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/effects/" style="font-size: 10px;">effects</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/firebug/" style="font-size: 10px;">firebug</a> <a href="/tags/firefox/" style="font-size: 11.33px;">firefox</a> <a href="/tags/flash/" style="font-size: 13.33px;">flash</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/framework/" style="font-size: 10.67px;">framework</a> <a href="/tags/game/" style="font-size: 11.33px;">game</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/git/" style="font-size: 10.67px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitshell/" style="font-size: 10px;">gitshell</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/html/" style="font-size: 15.33px;">html</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/icon/" style="font-size: 14px;">icon</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10.67px;">ie6</a> <a href="/tags/iframe/" style="font-size: 12px;">iframe</a> <a href="/tags/ipad/" style="font-size: 10px;">ipad</a> <a href="/tags/iphone/" style="font-size: 10.67px;">iphone</a> <a href="/tags/java/" style="font-size: 11.33px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joomla/" style="font-size: 10px;">joomla</a> <a href="/tags/lightbox/" style="font-size: 10px;">lightbox</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/logo/" style="font-size: 13.33px;">logo</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/money/" style="font-size: 10px;">money</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/net/" style="font-size: 10px;">net</a> <a href="/tags/news/" style="font-size: 10px;">news</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/phone/" style="font-size: 10px;">phone</a> <a href="/tags/photoshop/" style="font-size: 14px;">photoshop</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/player/" style="font-size: 10.67px;">player</a> <a href="/tags/plugins/" style="font-size: 16px;">plugins</a> <a href="/tags/png/" style="font-size: 10px;">png</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/psd/" style="font-size: 11.33px;">psd</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-js/" style="font-size: 10px;">react.js</a> <a href="/tags/script/" style="font-size: 10px;">script</a> <a href="/tags/scrollbar/" style="font-size: 10px;">scrollbar</a> <a href="/tags/select/" style="font-size: 10px;">select</a> <a href="/tags/slide/" style="font-size: 10px;">slide</a> <a href="/tags/software/" style="font-size: 10px;">software</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/table/" style="font-size: 10px;">table</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/theme/" style="font-size: 14.67px;">theme</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tool/" style="font-size: 10.67px;">tool</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/tutorial/" style="font-size: 10.67px;">tutorial</a> <a href="/tags/tutorials/" style="font-size: 11.33px;">tutorials</a> <a href="/tags/ui/" style="font-size: 12.67px;">ui</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/wallpaper/" style="font-size: 10.67px;">wallpaper</a> <a href="/tags/web/" style="font-size: 10.67px;">web</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/windows/" style="font-size: 11.33px;">windows</a> <a href="/tags/wordpress/" style="font-size: 17.33px;">wordpress</a> <a href="/tags/xd/" style="font-size: 10.67px;">xd</a> <a href="/tags/中秋/" style="font-size: 10px;">中秋</a> <a href="/tags/免费资源/" style="font-size: 10.67px;">免费资源</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端工具/" style="font-size: 18.67px;">前端工具</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/播放器/" style="font-size: 10.67px;">播放器</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/设计灵感/" style="font-size: 18px;">设计灵感</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/跨域/" style="font-size: 12.67px;">跨域</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 woiweb
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script>
+$(window).load(function(){
+    $('#weiboshow').attr('src','http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1052981072&verifier=54068b01&dpc=1')
+});
+</script>
+
+  <img id="gotop" src="/img/gotop.png" />
+  <script>
+	!function(o){var t=1e3,n=o("#gotop"),c=500;n.hide(),o(window).scroll(function(){var c=o(document).scrollTop();c>t?o(n).stop().fadeTo(300,1):o(n).stop().fadeTo(300,0)}),o(n).click(function(){return o("html, body").animate({scrollTop:0},c),!1})}(jQuery);
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>

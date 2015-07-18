@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>BigPipe：高性能的“流水线技术”网页 | 我爱互联网</title>
+  <meta name="author" content="woiweb">
+  
+  <meta name="description" content="test">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="BigPipe：高性能的“流水线技术”网页"/>
+  <meta property="og:site_name" content="我爱互联网"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我爱互联网" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">我爱互联网</a></h1>
+  <h2><a href="/">前端技术，前端资讯</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/about">关于我</a></li>
+    
+      <li><a href="/contact">联系我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2011-01-31T02:26:33.000Z"><a href="/2011/01/31/bigpipe/">2011-01-31</a></time>
+      
+      
+  
+    <h1 class="title">BigPipe：高性能的“流水线技术”网页</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Facebook的网站速度做为最关键的公司任务之一。在2009年，我们成功地实现了<a href="http://www.facebook.com/note.php?note_id=307069903919" target="_blank" rel="external">Facebook网站速度提升两倍</a> 。而正是我们的工程师团队的几个关键的创新使它成为可能。在本文中，我将向大家介绍我们的秘密武器之一，我们称之为BigPipe的伟大底层技术。<a id="more"></a></p>
+<p>BigPipe是一个重新设计的基础动态网页服务体系。大体思路是，分解网页成叫做Pagelets的小块，然后通过Web服务器和浏览器建立管道 并管理他们在不同阶段的运行。这是类似于大多数现代微处理器的流水线执行过程：多重指令管线通过不同的处理器执行单元，以达到性能的最佳。虽然 BigPipe是对现有的服务网络基础过程的重新设计，但它却不需要改变现有的网络浏览器或服务器，它完全使用PHP和JavaScript来实现。</p>
+<p><strong>动机</strong></p>
+<p>为了更好的了解BigPipe，我们需要了解一下现有的动态Web服务系统，它的历史可以追溯到万维网的初期，但现在与初期相比却并没有多少改变。 现代网站有着远远高于10年前的动态效果和互动性，但传统的网页服务系统早已无法跟上当今互联网速度的要求。在传统的模式，用户请求的生命周期如下：</p>
+<ul>
+<li>浏览器发送一个HTTP请求到Web服务器。</li>
+<li>Web服务器解析请求，然后读取数据存储层，制定一个HTML文件，并用一个HTTP响应把它发送到客户端。</li>
+<li>HTTP响应通过互联网传送到浏览器。</li>
+<li>浏览器解析Web服务器的响应，使用HTML文件构建了一个的DOM树，并且下载引用的CSS和JavaScript文件。</li>
+<li>CSS资源下载后，浏览器解析它们，并将它们应用到DOM树。</li>
+<li>JavaScript资源下载后，浏览器解析并执行它们。<br>传统模式在现代网站中效率是非常低下的，因为很多系统的操作顺序，不能互相重叠。一些如延时加载JavaScript、并行下载等优化技术已被网络 社区广泛采用，以此来克服的一些限制。然而，这些优化却很少涉及Web服务器和浏览器的执行顺序造成的瓶颈。当Web服务器正忙生成一个页面，浏览器处于 闲置状态，浪费其周期无所事事。当Web服务器完成生成页面，并将其发送到浏览器，浏览器则成为性能瓶颈并且Web服务器对其无从帮助。重叠Web服务器 的生成时间与浏览器的渲染时间，我们不仅可以减少最终的时间延迟，也能使网页更早显示用户可见区域给用户，从而大大减少用户对延迟的感知。</li>
+</ul>
+<p>Web服务器的产生时间和浏览器的渲染时间重叠，是特别有用的，如Facebook这样内容丰富的网站。一个典型的Facebook的网页包含许多 来源不同的数据资料：好友名单，好友动态，广告等。在传统的网页呈现模式的用户将不得不等到这些查询数据都返回并生成最终文件，然后将其发送到用户的电 脑。任何一个查询延迟都将拖慢整个最终文件的生成。</p>
+<p><strong>BigPipe如何工作</strong></p>
+<p>要利用该Web服务器和浏览器之间的并行性，BigPipe首先分解网页成多个可调用的Pagelets。正如<a href="http://en.wikipedia.org/wiki/Instruction_pipeline" target="_blank" rel="external">流水线微处理器</a>划分一个指令的生命周期为（如“取指令”，“指令解码”，“执行”，“写回寄存器”等）多个阶段，BigPipe的页面生成过程分为以下几个阶段：</p>
+<ul>
+<li>请求解析：Web服务器解析和完整性检查的HTTP请求。</li>
+<li>数据获取：Web服务器从存储层获取数据。</li>
+<li>标记生成：Web服务器生成的响应的HTML标记。</li>
+<li>网络传输：响应从Web服务器传送到浏览器。</li>
+<li>CSS的下载：浏览器下载网页的CSS的要求。</li>
+<li>DOM树结构和CSS样式：浏览器构造的DOM文档树，然后应用它的CSS规则。</li>
+<li>JavaScript中下载：浏览器下载网页中JavaScript引用的资源。</li>
+<li>JavaScript执行：浏览器的网页执行JavaScript代码。<br>前三个阶段执行，由Web服务器，最后四个阶段是由浏览器执行。每个Pagelet必须经过所有这些阶段顺序，但BigPipe在不同的阶段使几个Pagelets同时执行。</li>
+</ul>
+<p><img src="http://www.woiweb.net/wp-content/uploads/2011/01/http_imgload.jpg" alt=""><br>（Facebook主页的Pagelets，每个矩形对应一个Pagelet。）</p>
+<p>上面的图片使用Facebook主页为例子来说明如何将网页是分解成Pagelets。该主页包括几个Pagelets：“作者Pagelet”， “导航Pagelet”，“新闻动态Pagelet”，“请求框Pagelet”，“广告pagelet”，“朋友推荐”和“联系”等他们是相互独立的。 当“导航Pagelet”显示给用户，“新闻动态Pagelet”仍然可以在服务器上正在生成。</p>
+<p>在BigPipe，一个用户请求的生命周期是这样的：在浏览器发送一个HTTP请求到Web服务器。在收到的HTTP请求，并在上面进行一些全面的 检查，网站服务器立即发回一个未关闭的HTML文件，其中包括一个HTML  标签和标签的开始标签。标签包括BigPipe的JavaScript库来解析Pagelet以后收到的答复。在标签，有一个模板，它指定了页面的逻辑结 构和Pagelets占位符。例如:</p>
+<p><img src="http://www.woiweb.net/wp-content/uploads/2011/01/http_imgload.png" alt=""></p>
+<p>渲染后的第一个反应到客户端，Web服务器继续一个接一个生成Pagelets只要一个Pagelet生成，他将立即刷新到客户端在一个JSON编码的对象，包括所有的CSS，JavaScript的pagelet，它的HTML内容，以及一些元数据所需的资源。例如:</p>
+<p><img src="http://www.woiweb.net/wp-content/uploads/2011/01/http_imgload1.png" alt=""></p>
+<p>在客户端在收到Pagelet通过“onPageletArrive”发出的指令，BigPipe的JavaScript库将首先下载它的CSS资 源；在CSS资源被下载完成后，BigPipe将在Pagelet的标记HTML显示它的innerHTML。多个Pagelets的CSS可在同一时间 下载，它们可以根据其各自CSS的下载完成情况来确认显示顺序。在BigPipe中，JavaScript资源的优先级低于CSS和页面内容。因 此，BigPipe不会在所有Pagelets显示出来之前下载任何Pagelet中的JavaScript。然后，所有Pagelets的 JavaScript异步下载。最后Pagelet的JavaScript初始化代码根据其各自的下载完成情况来确定执行顺序。</p>
+<p>这种高度并行系统的最终结果是，多个Pageletsr的不同执行阶段同时进行。例如，浏览器可以正在下载三个Pagelets  CSS的资源，同时已经显示另一Pagelet内容，与此同时，服务器也在生成新的Pagelet。从用户的角度来看，页面是逐步呈现的。最开始的网页内 容会更快的显示，这大大减少了用户的对页面延时的感知。如果您要自己亲眼看到区别，你可以尝试以下连结： <a href="http://www.facebook.com/home.php?big_pipe=singleflush" target="_blank" rel="external">传统模式</a>和<a href="http://www.facebook.com/home.php?big_pipe=pipeline" target="_blank" rel="external">BigPipe</a>。第一个链接是传统模式单一模式显示页面。第二个链接是BigPipe管道模式的页面。如果您的浏览器版本比较老，网速也很慢，浏览器缓存不佳，哪么两页之间的加截时间差别将更加明显。</p>
+<p><strong>性能测试结果</strong></p>
+<p>下图是传统模式和BigPipe性能数据比较图，数据是75%用户对一个页面中最重要的内容（例如：新闻动态被认为是在Facebook主页上最重 要的内容）的感知延迟时间。收集数据方式是加载Facebook主页50次并且禁用浏览器缓存。该图显示BigPipe使用户在大多数浏览器中感受到的延 迟减少了一半。</p>
+<p><img src="http://www.woiweb.net/wp-content/uploads/2011/01/table.jpg" alt=""><br>(Facebook主页的延迟时间对比)</p>
+<p>值得一提的是BigPipe是从微处理器的流水线中得到启发。然而，他们的流水线过程之间存在一些差异。例如，虽然大多数阶段BigPipe只能操 作一次Pagelet，但有时多个Pagelets的CSS和JavaScript下载却可以同时运作，这类似于超标量微处理器。BigPipe另一个重 要区别是，我们实现了从并行编程引入的“障碍”概念，所有的Pagelets要完成一个特定阶段，如多个Pagelet显示区，它们都可以进行进一步 JavaScript下载和执行。</p>
+<p>在Facebook，我们鼓励创造性思考。我们不断的尝试创新技术，以使我们的网站更快。</p>
+<p>作者蒋长浩目前是Facebook的研究科学家，他致力于研究使网站更快的各种创新。</p>
+<p>译者还找到了几篇关于BigPipe的文章，如果有兴趣大家可以了解下：</p>
+<ul>
+<li><a href="http://www.infoq.com/cn/news/2010/08/bigpipe-facebook-optimize" target="_blank" rel="external">Facebook创新之BigPipe：优化页面加载时间</a></li>
+<li><a href="http://www.cnblogs.com/BearsTaR/archive/2010/06/18/facebook_html_chunk.html" target="_blank" rel="external">名站技术分析 — facebook奇特的页面加载技术</a></li>
+<li><a href="http://limu.javaeye.com/blog/765173" target="_blank" rel="external">Facebook让网站速度提升一倍的BigPipe技术分析</a></li>
+<li><a href="http://codemonkeyism.com/facebook-bigpipe-java/" target="_blank" rel="external">Facebooks BigPipe Done in Java</a></li>
+<li><a href="http://www.juhonkoti.net/2010/10/01/open-bigpipe-javascript-implementation" target="_blank" rel="external">Open BigPipe javascript implementation</a></li>
+<li><a href="http://blog.josemanuelperez.es/2010/09/tutorial-how-to-implement-bigpipe-using-asp-net-mvc-part-1/" target="_blank" rel="external">Tutorial: Implementing Facebook’s BigPipe Using ASP.Net MVC</a></li>
+<li><a href="http://www.subbu.org/blog/2010/07/bigpipe-done-in-node-js" target="_blank" rel="external">BigPipe Done in Node.js</a></li>
+</ul>
+<p>原文地址：<a href="http://www.facebook.com/note.php?note_id=389414033919" target="_blank" rel="external">http://www.facebook.com/note.php?note_id=389414033919</a><br>译文地址：<a href="http://isd.tencent.com/?p=2419" target="_blank" rel="external">http://isd.tencent.com/?p=2419</a><br>作者：蒋长浩</p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="clearfix">
+        
+  
+  <div class="categories">
+    <a href="/categories/开发经验/">开发经验</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/development/">development</a>, <a href="/tags/html/">html</a>, <a href="/tags/javascript/">javascript</a>
+  </div>
+
+        </div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a></div>
+  
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/2011/01/31/12-fun-clever-examples-of-html5/" class="alignleft prev" title="12个有趣的HTML5实例">12个有趣的HTML5实例</a>
+  
+  
+    <a href="/2011/02/22/efficient-javascript/" class="alignright next" title="高效 JavaScript">高效 JavaScript</a>
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2011/01/31/bigpipe/" data-title="BigPipe：高性能的“流水线技术”网页" data-url="/2011/01/31/bigpipe/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"woiwebnet"};
+  (function() {
+    var ds = document.createElement('script'); 
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <script>
+  	function search(form) {
+  		if(form.wd.value == '') return false;
+
+  		window.open('//www.baidu.com/s?wd=' + encodeURIComponent(form.wd.value + ' site:woiweb.net'));
+  		return false;
+  	}
+  </script>
+  <form action="//www.baidu.com/s" method="get" accept-charset="utf-8" id="searchForm" onSubmit="return search(this);">
+    <input type="search" id="keyword" name="wd" results="0" placeholder="搜索">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li class="cat"><a href="/categories/前端观察/">前端观察</a><small>28</small></li>
+  
+    <li class="cat"><a href="/categories/免费资源/">免费资源</a><small>40</small></li>
+  
+    <li class="cat"><a href="/categories/开发经验/">开发经验</a><small>27</small></li>
+  
+    <li class="cat"><a href="/categories/前端工具/">前端工具</a><small>34</small></li>
+  
+    <li class="cat"><a href="/categories/Html-amp-Css/">Html &amp; Css</a><small>25</small></li>
+  
+    <li class="cat"><a href="/categories/设计灵感/">设计灵感</a><small>14</small></li>
+  
+    <li class="cat"><a href="/categories/JQuery/">JQuery</a><small>27</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <iframe id="weiboshow" width="100%" height="350" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/3d/" style="font-size: 12px;">3d</a> <a href="/tags/404/" style="font-size: 10px;">404</a> <a href="/tags/Authentication/" style="font-size: 10px;">Authentication</a> <a href="/tags/Firefox4/" style="font-size: 10px;">Firefox4</a> <a href="/tags/Gallery/" style="font-size: 11.33px;">Gallery</a> <a href="/tags/JQuery/" style="font-size: 19.33px;">JQuery</a> <a href="/tags/Tooltip/" style="font-size: 10px;">Tooltip</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/audio/" style="font-size: 10.67px;">audio</a> <a href="/tags/blog/" style="font-size: 10.67px;">blog</a> <a href="/tags/bootsrap/" style="font-size: 10px;">bootsrap</a> <a href="/tags/bootstrap/" style="font-size: 11.33px;">bootstrap</a> <a href="/tags/brush/" style="font-size: 10.67px;">brush</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cms/" style="font-size: 11.33px;">cms</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/development/" style="font-size: 12.67px;">development</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10.67px;">download</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/effects/" style="font-size: 10px;">effects</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/firebug/" style="font-size: 10px;">firebug</a> <a href="/tags/firefox/" style="font-size: 11.33px;">firefox</a> <a href="/tags/flash/" style="font-size: 13.33px;">flash</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/framework/" style="font-size: 10.67px;">framework</a> <a href="/tags/game/" style="font-size: 11.33px;">game</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/git/" style="font-size: 10.67px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitshell/" style="font-size: 10px;">gitshell</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/html/" style="font-size: 15.33px;">html</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/icon/" style="font-size: 14px;">icon</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10.67px;">ie6</a> <a href="/tags/iframe/" style="font-size: 12px;">iframe</a> <a href="/tags/ipad/" style="font-size: 10px;">ipad</a> <a href="/tags/iphone/" style="font-size: 10.67px;">iphone</a> <a href="/tags/java/" style="font-size: 11.33px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joomla/" style="font-size: 10px;">joomla</a> <a href="/tags/lightbox/" style="font-size: 10px;">lightbox</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/logo/" style="font-size: 13.33px;">logo</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/money/" style="font-size: 10px;">money</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/net/" style="font-size: 10px;">net</a> <a href="/tags/news/" style="font-size: 10px;">news</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/phone/" style="font-size: 10px;">phone</a> <a href="/tags/photoshop/" style="font-size: 14px;">photoshop</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/player/" style="font-size: 10.67px;">player</a> <a href="/tags/plugins/" style="font-size: 16px;">plugins</a> <a href="/tags/png/" style="font-size: 10px;">png</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/psd/" style="font-size: 11.33px;">psd</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-js/" style="font-size: 10px;">react.js</a> <a href="/tags/script/" style="font-size: 10px;">script</a> <a href="/tags/scrollbar/" style="font-size: 10px;">scrollbar</a> <a href="/tags/select/" style="font-size: 10px;">select</a> <a href="/tags/slide/" style="font-size: 10px;">slide</a> <a href="/tags/software/" style="font-size: 10px;">software</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/table/" style="font-size: 10px;">table</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/theme/" style="font-size: 14.67px;">theme</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tool/" style="font-size: 10.67px;">tool</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/tutorial/" style="font-size: 10.67px;">tutorial</a> <a href="/tags/tutorials/" style="font-size: 11.33px;">tutorials</a> <a href="/tags/ui/" style="font-size: 12.67px;">ui</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/wallpaper/" style="font-size: 10.67px;">wallpaper</a> <a href="/tags/web/" style="font-size: 10.67px;">web</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/windows/" style="font-size: 11.33px;">windows</a> <a href="/tags/wordpress/" style="font-size: 17.33px;">wordpress</a> <a href="/tags/xd/" style="font-size: 10.67px;">xd</a> <a href="/tags/中秋/" style="font-size: 10px;">中秋</a> <a href="/tags/免费资源/" style="font-size: 10.67px;">免费资源</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端工具/" style="font-size: 18.67px;">前端工具</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/播放器/" style="font-size: 10.67px;">播放器</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/设计灵感/" style="font-size: 18px;">设计灵感</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/跨域/" style="font-size: 12.67px;">跨域</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 woiweb
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script>
+$(window).load(function(){
+    $('#weiboshow').attr('src','http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1052981072&verifier=54068b01&dpc=1')
+});
+</script>
+
+  <img id="gotop" src="/img/gotop.png" />
+  <script>
+	!function(o){var t=1e3,n=o("#gotop"),c=500;n.hide(),o(window).scroll(function(){var c=o(document).scrollTop();c>t?o(n).stop().fadeTo(300,1):o(n).stop().fadeTo(300,0)}),o(n).click(function(){return o("html, body").animate({scrollTop:0},c),!1})}(jQuery);
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>

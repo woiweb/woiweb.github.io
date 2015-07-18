@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>手机网站的导航制作教程 | 我爱互联网</title>
+  <meta name="author" content="woiweb">
+  
+  <meta name="description" content="test">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="手机网站的导航制作教程"/>
+  <meta property="og:site_name" content="我爱互联网"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我爱互联网" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">我爱互联网</a></h1>
+  <h2><a href="/">前端技术，前端资讯</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/about">关于我</a></li>
+    
+      <li><a href="/contact">联系我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2012-11-28T00:59:10.000Z"><a href="/2012/11/28/mobile-navigation-design-tutorial/">2012-11-28</a></time>
+      
+      
+  
+    <h1 class="title">手机网站的导航制作教程</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>为了让Web页面在手机上显示流畅，现在国外很多网站都使用Responsive设计和CSS3 Media Queries的结合来实现。这样的实例到处可见，那么今天我想和大家一起学习的是有关于这种方法实现手机布局中的导航制作。</p>
+<p>如果你的导航选项比较多，放到手机上来浏览就会挤到一起，造成美观性的不足。下面为了解决这样的问题，我们就一起跟随<a href="http://twitter.com/nickla" target="_blank" rel="external">Nick La</a>写的教程《<a href="http://webdesignerwall.com/tutorials/mobile-navigation-design-tutorial" target="_blank" rel="external">Mobile Navigation Design &amp; Tutorial</a>》学习如何使用jQuery来解决刚才所说的问题。<a id="more"></a></p>
+<p><strong>问题的描述</strong></p>
+<p>下面的截图说明了导航布局在手机上的问题。如果你的导航只有三到四个选项，如Web Designer Wall网站，导航刚好一行能显示，但当你的导航选项包含更多时，其实的选项就会被挤压下去，比如说<a href="http://bitfoundry.ca/" target="_blank" rel="external">Bitfoundry</a>网站。下面可以看看他们对比的截图：</p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site1.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site1.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p><strong>解决方法</strong></p>
+<p>Nick La在教程中罗列了几种相关的解决方法:</p>
+<p><strong>1、下拉选择</strong></p>
+<p>这种方法是将所有的导航选项放到一个下拉选择控制（select）中，但这种方法并不是很好，因为select的样式要制作到让各<span class="wp_keywordlink"><a href="http://blog.jobbole.com/12749/" title="浏览器" target="_blank" rel="external">浏览器</a></span>下完全一致是非常的麻烦。除非你使用jQuery的插件，比如说<a href="http://harvesthq.github.com/chosen/" target="_blank" rel="external">Chosen</a>插件能帮你实现select的样式美化，否则的话你只好采用select的默认样式风格。这也将导致用户的体验不一样，在桌面系统下是链接标签，而在手机上却是下拉选择框。如果你喜欢这种解决方式，你可以仔细阅读CSS-Tricks写的<a href="http://css-tricks.com/convert-menu-to-dropdown/" target="_blank" rel="external">Convert a Menu to a Dropdown for Small Screens</a>一文。也可以参考下面的网站</p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site2.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site2.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site3.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site3.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p><strong>2、显示成块状</strong></p>
+<p>第二种方法是将所有导航通过”display:block”，并将float去掉，将每个导航项设置成一个块项,这是一种快速的解决方法，不过同时也带来一个不足之处，给头部带来很大的空间，本来手机屏幕空间就小，这样一来，整个屏幕或许只能看到你的导航选项了。这样导致用户体验就差，需要滚动到底部才能看到页面的主内容。比如说下面的几个案例。</p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site4.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site4.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site5.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site5.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site6.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site6.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p><strong>3、菜单图标</strong></p>
+<p>最后一种解决方法是使用菜单图标名菜单按钮。这种效果是借助jquery来实现的。在页面截入时，显示一个菜单的图标或按钮，而导航选项是隐藏的，当你点击这个图标时导航选项将显示出来，再次点击时这们导航选项将隐藏。这种方法将是最适合的一种方法，完全可以通过css来实现，如果你还需要兼容ie的话，那这种功能你就在考虑配合jQ来完成，下面列出几个案例，供大家参考：</p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site7.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site7.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site8.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site8.jpg" alt="手机网站的导航制作手机网站的导航制作" title="手机网站的导航制作"></a><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site9.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site9.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site10.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site10.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p>在众多按例中，我比较喜欢bootstrap的，大家感兴趣可以去看看bootstrap的<a href="http://twitter.github.com/bootstrap/" target="_blank" rel="external">api</a>。</p>
+<p><strong>jQuery制作手机导航</strong></p>
+<p>上面给大家展示了三种不同的方法实现手机导航效果，下面我们来看看如何使用jQuery实现上面介绍的第三种方法。</p>
+<p>方法很简单，使用jQuery的prepend方法在导航中插入一个菜单按钮，然后给这个按钮绑定一个click事件，点击实现显示/隐藏效果，具体方法如下：</p>
+<p><strong>HTML Markup</strong></p>
+<p><pre class="brush: xhtml; gutter: true">&lt; nav id=”nav-wrap”&gt;<br>    &lt; ul id=”nav”&gt;<br>       &lt; li&gt;&lt; a href=”#”&gt;Button&lt; /a&gt;&lt; /li&gt;<br>       &lt; li&gt;&lt; a href=”#”&gt;Button&lt; /a&gt;&lt; /li&gt;<br>    &lt; /ul&gt;<br>&lt; /nav&gt;</pre><br>上面结构是一个制作导航菜单的模板，极其的常见，在些不做过多描述。</p>
+<p><strong>jQuery Code</strong></p>
+<p>使用jQuery的prepend方法，将“&lt;div id=”menu-icon”&gt;”插入到“&lt;nav id=”nav-wrap”&gt;”前面，并在“div#menu-icon”上绑定一个click事件，实现导航的显示/隐藏功能</p>
+<p><pre class="brush: javascript; gutter: true">jQuery(document).ready(function($){<br>    /<em> prepend menu icon </em>/<br>    $(‘#nav-wrap’).prepend(‘&lt; div id=”menu-icon”&gt;Menu&lt; /div&gt;’);</pre></p>
+<pre><code><span class="comment">/* toggle nav */</span>
+$(<span class="string">"#menu-icon"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    $(<span class="string">"#nav"</span>).slideToggle();
+    $(<span class="keyword">this</span>).toggleClass(<span class="string">"active"</span>);
+});
+
+    });<span class="xml"><span class="tag">&lt;/<span class="title">pre</span>&gt;</span></span>
+</code></pre><p>此时导航的HTML Markup并变成下面这样：</p>
+<p><pre class="brush: xhtml; gutter: true">&lt; nav id=”nav-wrap”&gt;<br>    &lt; div id=”menu-icon”&gt;Menu&lt; /div&gt;<br>    &lt; ul id=”nav”&gt;<br>        &lt; li&gt;&lt; a href=”#”&gt;Button&lt; /a&gt;&lt; /li&gt;<br>        &lt; li&gt;&lt; a href=”#”&gt;Button&lt; /a&gt;&lt; /li&gt;<br>    &lt; /ul&gt;<br>        &lt; /nav&gt;</pre><br><strong>CSS Code</strong></p>
+<p>结构有了，功能也有了，但还需要CSS来美化，那么有关于CSS详细的代码在此就不做过多得的罗列，此处只给大家介绍几个关键部分。</p>
+<p>首先在样式中将“div#menu-icon”隐藏起来（display:none），然后通过CSS3 Media Queries来重置div#menu-icon样式。换句话说当显屏宽度小于600px时，将div#menu-icon重设置为显示(display:block)。</p>
+<p><pre class="brush: css; gutter: true">@media screen and (max-width:600px){</pre></p>
+<pre><code><span class="id">#menu-icon</span> <span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#000</span></span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">42px</span></span></span>;
+    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;
+    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url</span>(images/menu-icon.png) no-repeat left center</span></span>;
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">8px</span> <span class="number">10px</span> <span class="number">42px</span></span></span>;
+    <span class="rule"><span class="attribute">cursor</span>:<span class="value"> pointer</span></span>;
+    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#666</span></span></span>;
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;<span class="comment">/*显示div#menu-icon*/</span>
+}</span>
+<span class="id">#nav</span> <span class="rules">{
+    <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+    <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">38px</span></span></span>;
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">160px</span></span></span>;
+    <span class="rule"><span class="attribute">z-index</span>:<span class="value"> <span class="number">10000</span></span></span>;
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5px</span></span></span>;
+    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f8f8f8</span></span></span>;
+    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#999</span></span></span>;
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;<span class="comment">/*默认隐藏，通过jq实现显示隐藏切换*/</span>
+}</span>
+</code></pre><p>}<br>通过CSS3 Media Queries在手机浏览器上，将#nav设置为隐藏，这样主要实现实初截入时隐藏导航，然后通过上面写的jq来实现，点击“div#menu-icon”图标时，显示导航菜单项，在点击时就隐藏导航菜单项。如图所示：</p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site11.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site11.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p><strong>DEMO效果</strong></p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site12.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site12.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p>上面DEMO是Nick La给大家写的一个效果，感兴趣的话可以看看，不过记得使用iPhone查看，不然就看不到下图的效果：</p>
+<p><a href="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site13.jpg" title="手机网站的导航制作" target="_blank" rel="external"><img src="http://blog.jobbole.com/wp-content/uploads/2012/07/Navigation-production-of-mobile-phone-site13.jpg" alt="手机网站的导航制作" title="手机网站的导航制作"></a></p>
+<p>那么有关于手机上导航制作方法就介绍完了，上面方法各有所长，就像Nick La介绍的一样，最后取决需要大家自己根据需求去定夺，此文仅供参考，希望大家喜欢，如果您觉得对你有所帮助，请将此文发送给你的朋友，如果你还有更好的建议也可以在下面的评论中与我们一起分享您的经验。最后再次感谢Nick La给我们带来这么好的<a href="http://webdesignerwall.com/tutorials/mobile-navigation-design-tutorial" target="_blank" rel="external">教程</a>。</p>
+<p>来源：<a href="http://www.w3cplus.com/jquery/mobile-navigation-design-with-jquery" target="_blank" rel="external">w3cplus</a></p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="clearfix">
+        
+  
+  <div class="categories">
+    <a href="/categories/JQuery/">JQuery</a>, <a href="/categories/JQuery/开发经验/">开发经验</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/JQuery/">JQuery</a>, <a href="/tags/mobile/">mobile</a>, <a href="/tags/tutorial/">tutorial</a>
+  </div>
+
+        </div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a></div>
+  
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/2012/11/13/wordpress-mobile-themes/" class="alignleft prev" title="分享25个高质量的移动设备wordpress主题（Mobile theme)">分享25个高质量的移动设备wordpress主题（Mobile theme)</a>
+  
+  
+    <a href="/2013/01/10/button-without-type-problem/" class="alignright next" title="button标签未指定类型导致的问题">button标签未指定类型导致的问题</a>
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2012/11/28/mobile-navigation-design-tutorial/" data-title="手机网站的导航制作教程" data-url="/2012/11/28/mobile-navigation-design-tutorial/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"woiwebnet"};
+  (function() {
+    var ds = document.createElement('script'); 
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <script>
+  	function search(form) {
+  		if(form.wd.value == '') return false;
+
+  		window.open('//www.baidu.com/s?wd=' + encodeURIComponent(form.wd.value + ' site:woiweb.net'));
+  		return false;
+  	}
+  </script>
+  <form action="//www.baidu.com/s" method="get" accept-charset="utf-8" id="searchForm" onSubmit="return search(this);">
+    <input type="search" id="keyword" name="wd" results="0" placeholder="搜索">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li class="cat"><a href="/categories/前端观察/">前端观察</a><small>28</small></li>
+  
+    <li class="cat"><a href="/categories/免费资源/">免费资源</a><small>40</small></li>
+  
+    <li class="cat"><a href="/categories/开发经验/">开发经验</a><small>27</small></li>
+  
+    <li class="cat"><a href="/categories/前端工具/">前端工具</a><small>34</small></li>
+  
+    <li class="cat"><a href="/categories/Html-amp-Css/">Html &amp; Css</a><small>25</small></li>
+  
+    <li class="cat"><a href="/categories/设计灵感/">设计灵感</a><small>14</small></li>
+  
+    <li class="cat"><a href="/categories/JQuery/">JQuery</a><small>27</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <iframe id="weiboshow" width="100%" height="350" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/3d/" style="font-size: 12px;">3d</a> <a href="/tags/404/" style="font-size: 10px;">404</a> <a href="/tags/Authentication/" style="font-size: 10px;">Authentication</a> <a href="/tags/Firefox4/" style="font-size: 10px;">Firefox4</a> <a href="/tags/Gallery/" style="font-size: 11.33px;">Gallery</a> <a href="/tags/JQuery/" style="font-size: 19.33px;">JQuery</a> <a href="/tags/Tooltip/" style="font-size: 10px;">Tooltip</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/audio/" style="font-size: 10.67px;">audio</a> <a href="/tags/blog/" style="font-size: 10.67px;">blog</a> <a href="/tags/bootsrap/" style="font-size: 10px;">bootsrap</a> <a href="/tags/bootstrap/" style="font-size: 11.33px;">bootstrap</a> <a href="/tags/brush/" style="font-size: 10.67px;">brush</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cms/" style="font-size: 11.33px;">cms</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/development/" style="font-size: 12.67px;">development</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10.67px;">download</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/effects/" style="font-size: 10px;">effects</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/firebug/" style="font-size: 10px;">firebug</a> <a href="/tags/firefox/" style="font-size: 11.33px;">firefox</a> <a href="/tags/flash/" style="font-size: 13.33px;">flash</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/framework/" style="font-size: 10.67px;">framework</a> <a href="/tags/game/" style="font-size: 11.33px;">game</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/git/" style="font-size: 10.67px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitshell/" style="font-size: 10px;">gitshell</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/html/" style="font-size: 15.33px;">html</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/icon/" style="font-size: 14px;">icon</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10.67px;">ie6</a> <a href="/tags/iframe/" style="font-size: 12px;">iframe</a> <a href="/tags/ipad/" style="font-size: 10px;">ipad</a> <a href="/tags/iphone/" style="font-size: 10.67px;">iphone</a> <a href="/tags/java/" style="font-size: 11.33px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joomla/" style="font-size: 10px;">joomla</a> <a href="/tags/lightbox/" style="font-size: 10px;">lightbox</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/logo/" style="font-size: 13.33px;">logo</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/money/" style="font-size: 10px;">money</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/net/" style="font-size: 10px;">net</a> <a href="/tags/news/" style="font-size: 10px;">news</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/phone/" style="font-size: 10px;">phone</a> <a href="/tags/photoshop/" style="font-size: 14px;">photoshop</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/player/" style="font-size: 10.67px;">player</a> <a href="/tags/plugins/" style="font-size: 16px;">plugins</a> <a href="/tags/png/" style="font-size: 10px;">png</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/psd/" style="font-size: 11.33px;">psd</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-js/" style="font-size: 10px;">react.js</a> <a href="/tags/script/" style="font-size: 10px;">script</a> <a href="/tags/scrollbar/" style="font-size: 10px;">scrollbar</a> <a href="/tags/select/" style="font-size: 10px;">select</a> <a href="/tags/slide/" style="font-size: 10px;">slide</a> <a href="/tags/software/" style="font-size: 10px;">software</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/table/" style="font-size: 10px;">table</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/theme/" style="font-size: 14.67px;">theme</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tool/" style="font-size: 10.67px;">tool</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/tutorial/" style="font-size: 10.67px;">tutorial</a> <a href="/tags/tutorials/" style="font-size: 11.33px;">tutorials</a> <a href="/tags/ui/" style="font-size: 12.67px;">ui</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/wallpaper/" style="font-size: 10.67px;">wallpaper</a> <a href="/tags/web/" style="font-size: 10.67px;">web</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/windows/" style="font-size: 11.33px;">windows</a> <a href="/tags/wordpress/" style="font-size: 17.33px;">wordpress</a> <a href="/tags/xd/" style="font-size: 10.67px;">xd</a> <a href="/tags/中秋/" style="font-size: 10px;">中秋</a> <a href="/tags/免费资源/" style="font-size: 10.67px;">免费资源</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端工具/" style="font-size: 18.67px;">前端工具</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/播放器/" style="font-size: 10.67px;">播放器</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/设计灵感/" style="font-size: 18px;">设计灵感</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/跨域/" style="font-size: 12.67px;">跨域</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 woiweb
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script>
+$(window).load(function(){
+    $('#weiboshow').attr('src','http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1052981072&verifier=54068b01&dpc=1')
+});
+</script>
+
+  <img id="gotop" src="/img/gotop.png" />
+  <script>
+	!function(o){var t=1e3,n=o("#gotop"),c=500;n.hide(),o(window).scroll(function(){var c=o(document).scrollTop();c>t?o(n).stop().fadeTo(300,1):o(n).stop().fadeTo(300,0)}),o(n).click(function(){return o("html, body").animate({scrollTop:0},c),!1})}(jQuery);
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>

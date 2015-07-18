@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery3D全景效果展示插件 | 我爱互联网</title>
+  <meta name="author" content="woiweb">
+  
+  <meta name="description" content="test">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="jQuery3D全景效果展示插件"/>
+  <meta property="og:site_name" content="我爱互联网"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我爱互联网" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">我爱互联网</a></h1>
+  <h2><a href="/">前端技术，前端资讯</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/about">关于我</a></li>
+    
+      <li><a href="/contact">联系我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-07-29T06:36:30.000Z"><a href="/2010/07/29/jquery-panorama-plugins/">2010-07-29</a></time>
+      
+      
+  
+    <h1 class="title">jQuery3D全景效果展示插件</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>最近在研究商品的虚拟展示技术，我们项目中需要一个3D展示的功能，3D展示也就是把一个商品旋转360°来展示它的各个层面，网上Baidu+Google后，还真发现这种实现方式有很多，比如有Quicktime的，Flash的和JavaScript的。</p>
+<a id="more"></a>
+<p>分析后，发现它们各有优缺点，用Quicktime来实现，首先需要将全景图片制作成.mov格式的文件，而且客户浏览器必须安装Quicktime插件才能看效果；用Flash来实现，需要学习Flash的相关技术和ActionScript，这些我都不熟，所以放弃了，呵呵。对于Javascript实现方式，我还是很赞同的，因为它不需安装任何插件，而且开发起来更容易上手，尤其现在有了jQuery，它不仅降低了开发的工作量而且可以轻易实现更多的展示效果，所以最终选择了jQuery来实现。</p>
+<p>经过几天时间，1.0版本终于出来了，现在贴出来与大家一起分享，如果有朋友正在做这方面的开发，希望能给你有所帮助，就算抛砖引玉了，希望多多交流阿，呵呵，不多说了，看正文吧 。</p>
+<p>参考：<a href="http://www.mathieusavard.info/" target="_blank" rel="external">http://www.mathieusavard.info/</a></p>
+<h3 id="JQuery_Panorama_Plugins">JQuery Panorama Plugins</h3><ul>
+<li>当前版本: 1.0 (07/29/2010)</li>
+<li><a href="http://www.woiweb.net/wp-content/uploads/plugins/panorama/" title="panorama demo">Demo</a></li>
+<li><a href="https://github.com/woiweb/jquery-panorama" title="jquery-panorama" target="_blank" rel="external">GitHub</a></li>
+<li><a href="http://code.google.com/p/jquery-panorama-plugins/downloads/detail?name=panorama.rar&amp;can=2&amp;q=#makechanges" target="_blank" rel="external">Download</a></li>
+</ul>
+<h3 id="特性">特性</h3><ul>
+<li>支持自动旋转及向左、右方向的旋转</li>
+<li>支持鼠标拖拽旋转和鼠标滑过旋转</li>
+<li>支持按钮点击缩放和鼠标滚轮缩放</li>
+<li>支持重置操作</li>
+</ul>
+<h3 id="兼容性">兼容性</h3><ul>
+<li>Firefox 3.6</li>
+<li>IE6-IE8</li>
+<li>其它待测</li>
+</ul>
+<h3 id="用法">用法</h3><p>1、首先需要引入 jQuery Lib包、jquery.mousewheel.js, jquery.panorama-1.0.js. 我们在这用到jquery的mousewheel插件来实现鼠标滚轮事件。</p>
+<p><pre class="brush:javascript">&lt;script type=”text/javascript” src=”js/jquery-1.3.2.min.js” type=”text/javascripts” /&gt;<br>&lt;script type=”text/javascript” src=”js/jquery.mousewheel.js” type=”text/javascripts” /&gt;<br>&lt;script type=”text/javascript”src=”js/jquery.easing.1.3.js” type=”text/javascript” /&gt;<br>&lt;script type=”text/javascript” src=”js/jquery.panorama-1.0.js” type=”text/javascripts” /&gt;</pre><br>2、加入CSS样式</p>
+<p><pre class="brush:html">.panorama_box{border:1px solid #fff; margin:auto;}<br>.image_box{border:1px solid #369; margin:auto; overflow:hidden;position:relative;}<br>.image_box img{position:relative;}<br>.toolbar{border:1px solid #CCCCCC;height:45px;margin:2px 0;}<br>.toolbar span{height:40px;width:38px;margin:2px;cursor:pointer;display:block;float:right;}<br>.zoomin{background:url(“images/toolbar.jpg”) no-repeat scroll 0 0;}<br>.zoomout{background:url(“images/toolbar.jpg”) no-repeat scroll -38px 0;}<br>.turnleft{background:url(“images/toolbar.jpg”) no-repeat scroll -112px 0;}<br>.turnright{background:url(“images/toolbar.jpg”) no-repeat scroll -76px 0;}<br>.start{background:url(“images/toolbar.jpg”) no-repeat scroll -150px 0;}<br>.pause{background:url(“images/toolbar.jpg”) no-repeat scroll -188px 0;}<br>.reset{background:url(“images/toolbar.jpg”) no-repeat scroll -226px 0;}</pre><br>3、需要将你拍好的多张物品图片命名规则后放置指定目录中，如：images/pic2/，并在页面中添加展示物品的第一张图</p>
+<p><div><img src="http://static.oschina.net/uploads/code/201104/14141304_XLw5.png" alt=""></div><br>4、Javascript调用</p>
+<p><pre class="brush:javascript">$(function() {<br>    var arr = []<br>    for (var x=1; x&lt;= 25; x++) {<br>        arr.push(“images/pic2/“ + x + “.jpg”);<br>    }<br>    $(“#click”).threesixty({<br>        images:arr,<br>        method:’click’,<br>        ‘cycle’:1<br>    });<br>});</pre><br>看看效果吧，:)</p>
+<h3 id="参数说明">参数说明</h3><table cellspacing="0" cellpadding="0"><br><thead><br><tr><br><th>参数</th><br><th>描述</th><br><th>默认值</th><br></tr><br></thead><br><tbody><br><tr><br><td>images</td><br><td>物品360°拍摄的图片路径</td><br><td></td><br></tr><br><tr><br><td>method</td><br><td>触发方式</td><br><td>click</td><br></tr><br><tr><br><td>cycle</td><br><td>旋转次数</td><br><td>1</td><br></tr><br><tr><br><td>direction</td><br><td>旋转方向</td><br><td>forward</td><br></tr><br><tr><br><td>cursor</td><br><td>鼠标样式</td><br><td>all-scroll</td><br></tr><br><tr><br><td>auto</td><br><td>是否自动旋转</td><br><td>false</td><br></tr><br><tr><br><td>speed</td><br><td>旋转速度</td><br><td>150</td><br></tr><br><tr><br><td>scale</td><br><td>缩放比例</td><br><td>0.1</td><br></tr><br><tr><br><td>maxZoomLevel</td><br><td>最大放大比例</td><br><td>5</td><br></tr><br></tbody><br></table>
+
+<p>推荐阅读：<a href="http://www.woiweb.net/jquery-multiselect-plugin-themeroller-support.html">jQuery MultiSelect Plugin</a></p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="clearfix">
+        
+  
+  <div class="categories">
+    <a href="/categories/JQuery/">JQuery</a>, <a href="/categories/JQuery/免费资源/">免费资源</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/3d/">3d</a>, <a href="/tags/JQuery/">JQuery</a>
+  </div>
+
+        </div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a></div>
+  
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/2010/07/28/30-free-social-media-icon-sets/" class="alignleft prev" title="30个免费的高质量的社区媒体图标">30个免费的高质量的社区媒体图标</a>
+  
+  
+    <a href="/2010/08/01/top-ten-best-wordpress-plugins/" class="alignright next" title="十大最佳WordPress插件推荐">十大最佳WordPress插件推荐</a>
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2010/07/29/jquery-panorama-plugins/" data-title="jQuery3D全景效果展示插件" data-url="/2010/07/29/jquery-panorama-plugins/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"woiwebnet"};
+  (function() {
+    var ds = document.createElement('script'); 
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <script>
+  	function search(form) {
+  		if(form.wd.value == '') return false;
+
+  		window.open('//www.baidu.com/s?wd=' + encodeURIComponent(form.wd.value + ' site:woiweb.net'));
+  		return false;
+  	}
+  </script>
+  <form action="//www.baidu.com/s" method="get" accept-charset="utf-8" id="searchForm" onSubmit="return search(this);">
+    <input type="search" id="keyword" name="wd" results="0" placeholder="搜索">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li class="cat"><a href="/categories/前端观察/">前端观察</a><small>28</small></li>
+  
+    <li class="cat"><a href="/categories/免费资源/">免费资源</a><small>40</small></li>
+  
+    <li class="cat"><a href="/categories/开发经验/">开发经验</a><small>27</small></li>
+  
+    <li class="cat"><a href="/categories/前端工具/">前端工具</a><small>34</small></li>
+  
+    <li class="cat"><a href="/categories/Html-amp-Css/">Html &amp; Css</a><small>25</small></li>
+  
+    <li class="cat"><a href="/categories/设计灵感/">设计灵感</a><small>14</small></li>
+  
+    <li class="cat"><a href="/categories/JQuery/">JQuery</a><small>27</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <iframe id="weiboshow" width="100%" height="350" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/3d/" style="font-size: 12px;">3d</a> <a href="/tags/404/" style="font-size: 10px;">404</a> <a href="/tags/Authentication/" style="font-size: 10px;">Authentication</a> <a href="/tags/Firefox4/" style="font-size: 10px;">Firefox4</a> <a href="/tags/Gallery/" style="font-size: 11.33px;">Gallery</a> <a href="/tags/JQuery/" style="font-size: 19.33px;">JQuery</a> <a href="/tags/Tooltip/" style="font-size: 10px;">Tooltip</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/audio/" style="font-size: 10.67px;">audio</a> <a href="/tags/blog/" style="font-size: 10.67px;">blog</a> <a href="/tags/bootsrap/" style="font-size: 10px;">bootsrap</a> <a href="/tags/bootstrap/" style="font-size: 11.33px;">bootstrap</a> <a href="/tags/brush/" style="font-size: 10.67px;">brush</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cms/" style="font-size: 11.33px;">cms</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/development/" style="font-size: 12.67px;">development</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10.67px;">download</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/effects/" style="font-size: 10px;">effects</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/firebug/" style="font-size: 10px;">firebug</a> <a href="/tags/firefox/" style="font-size: 11.33px;">firefox</a> <a href="/tags/flash/" style="font-size: 13.33px;">flash</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/framework/" style="font-size: 10.67px;">framework</a> <a href="/tags/game/" style="font-size: 11.33px;">game</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/git/" style="font-size: 10.67px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitshell/" style="font-size: 10px;">gitshell</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/html/" style="font-size: 15.33px;">html</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/icon/" style="font-size: 14px;">icon</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10.67px;">ie6</a> <a href="/tags/iframe/" style="font-size: 12px;">iframe</a> <a href="/tags/ipad/" style="font-size: 10px;">ipad</a> <a href="/tags/iphone/" style="font-size: 10.67px;">iphone</a> <a href="/tags/java/" style="font-size: 11.33px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joomla/" style="font-size: 10px;">joomla</a> <a href="/tags/lightbox/" style="font-size: 10px;">lightbox</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/logo/" style="font-size: 13.33px;">logo</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/money/" style="font-size: 10px;">money</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/net/" style="font-size: 10px;">net</a> <a href="/tags/news/" style="font-size: 10px;">news</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/phone/" style="font-size: 10px;">phone</a> <a href="/tags/photoshop/" style="font-size: 14px;">photoshop</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/player/" style="font-size: 10.67px;">player</a> <a href="/tags/plugins/" style="font-size: 16px;">plugins</a> <a href="/tags/png/" style="font-size: 10px;">png</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/psd/" style="font-size: 11.33px;">psd</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-js/" style="font-size: 10px;">react.js</a> <a href="/tags/script/" style="font-size: 10px;">script</a> <a href="/tags/scrollbar/" style="font-size: 10px;">scrollbar</a> <a href="/tags/select/" style="font-size: 10px;">select</a> <a href="/tags/slide/" style="font-size: 10px;">slide</a> <a href="/tags/software/" style="font-size: 10px;">software</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/table/" style="font-size: 10px;">table</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/theme/" style="font-size: 14.67px;">theme</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tool/" style="font-size: 10.67px;">tool</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/tutorial/" style="font-size: 10.67px;">tutorial</a> <a href="/tags/tutorials/" style="font-size: 11.33px;">tutorials</a> <a href="/tags/ui/" style="font-size: 12.67px;">ui</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/wallpaper/" style="font-size: 10.67px;">wallpaper</a> <a href="/tags/web/" style="font-size: 10.67px;">web</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/windows/" style="font-size: 11.33px;">windows</a> <a href="/tags/wordpress/" style="font-size: 17.33px;">wordpress</a> <a href="/tags/xd/" style="font-size: 10.67px;">xd</a> <a href="/tags/中秋/" style="font-size: 10px;">中秋</a> <a href="/tags/免费资源/" style="font-size: 10.67px;">免费资源</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端工具/" style="font-size: 18.67px;">前端工具</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/播放器/" style="font-size: 10.67px;">播放器</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/设计灵感/" style="font-size: 18px;">设计灵感</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/跨域/" style="font-size: 12.67px;">跨域</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 woiweb
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script>
+$(window).load(function(){
+    $('#weiboshow').attr('src','http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1052981072&verifier=54068b01&dpc=1')
+});
+</script>
+
+  <img id="gotop" src="/img/gotop.png" />
+  <script>
+	!function(o){var t=1e3,n=o("#gotop"),c=500;n.hide(),o(window).scroll(function(){var c=o(document).scrollTop();c>t?o(n).stop().fadeTo(300,1):o(n).stop().fadeTo(300,0)}),o(n).click(function(){return o("html, body").animate({scrollTop:0},c),!1})}(jQuery);
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>

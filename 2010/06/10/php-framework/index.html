@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开发者不可不知的PHP框架深度解析 | 我爱互联网</title>
+  <meta name="author" content="woiweb">
+  
+  <meta name="description" content="test">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="开发者不可不知的PHP框架深度解析"/>
+  <meta property="og:site_name" content="我爱互联网"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我爱互联网" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">我爱互联网</a></h1>
+  <h2><a href="/">前端技术，前端资讯</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/about">关于我</a></li>
+    
+      <li><a href="/contact">联系我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-06-09T21:46:20.000Z"><a href="/2010/06/10/php-framework/">2010-06-10</a></time>
+      
+      
+  
+    <h1 class="title">开发者不可不知的PHP框架深度解析</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>PHP成为世界上最流行的脚本语言有许多原因：灵活性，易用性等等。但通常只用PHP或者其他语言编码就会显得单调、重复，这时候就需要一个PHP 框架来代替程序员完成那些重复不变的部分。本文通过回答What, When, Why 以及 Which这些问题，将对PHP框架进行全面解析。<a id="more"></a></p>
+<p><strong>PHP框架是什么？</strong></p>
+<p>PHP框架提供了一个用以构建web应用的基本框架，从而简化了用PHP编写web应用程序的流程。换言之，PHP框架有助于促进快速应用开发（ RAD ），不但节省开发时间、有助于建立更稳定的应用，而且减少了重复编码的开发。通过确保适当的数据库交换和在表现层编码，框架还可以帮助初学者建立更稳定的 应用服务。这可以让你花更多的时间去创建实际的Web应用程序，而不是花时间写重复的代码。</p>
+<p>通常认为PHP框架的作用相当于模型-视图-控制器（Model View Controller）。MVC是种编程的架构模式，将业务逻辑从UI中分离出来，允许一个一个单独修改（也称为关注点分离）。在MVC中，Model指 数据，View指表现层，Controller则指应用程序或业务逻辑。基本上， MVC打破了一个应用的开发进程，这样各组件就可以不受影响地各自工作。从本质上讲，这使得用PHP编码更快更简单。</p>
+<p><strong>为什么要使用PHP框架？</strong></p>
+<p>开发人员使用PHP框架的好处很多，其中之一是加快开发进程。在类似项目中重用代码将为开发者节省大量的时间和精力。框架为执行繁琐的代码任务提供 预建模块，因此，开发人员可以把时间花在实际应用的开发上，而不是每一个项目都重新构建基础功能。</p>
+<p>稳定是开发者使用框架的另一个重要原因。虽然简单是PHP最大的优点，很多人也因为这一点喜欢使用这个脚本语言，但它同时也是PHP最大的缺点。一 些开发者尤其是初学者很容易写出低劣的代码，而自己却没有意识到。使用PHP，应用往往会将静态工作加倍，不知不觉中您可能已经在编码时打开了一个大的安 全漏洞，因此可能会受到攻击。重要的是要记住，PHP是一个非常宽容的语言，因此，更重要的是在编程时确保封闭任何漏洞，即便应用看起来可以正常工作。</p>
+<p>最后，PHP框架的使用是非常广泛的，而且有许多不同的框架可供选择。许多开发者会选择知名的框架，是因为它的知名度、其开发团队的巨大支持，而且 他们可以通过论坛/社区来与其他使用相同框架的开发者交流，当然你也可以开发自己的框架。这里提醒一下，首先应该检查你的项目来决定是否应该使用一个框 架。你应该问自己：它会节省你和其他使用者的时间和精力么？应用程序的性能会更好么？是否会提高稳定性？如果这些问题你的回答都是是，那么你就该为你的项 目选择一个合适的框架了。</p>
+<p><strong>何时使用PHP框架？</strong></p>
+<p>这是一个无论有经验的开发者还是初级开发者都共有的问题，而且这个问题也确实没有直接的回答。对于许多初学者来说，一个框架将提供很多简便和稳定， 因此应该尽可能地使用PHP框架。这将有助于减少或消除不良编码，加快开发进程。</p>
+<p>另一方面，许多有经验的PHP程序员将框架视为不知道如何写出好的、干净的代码的低级程序员的工具。姑且不论这一点的真假，起码毋庸置疑的是PHP 框架是一个可以用来节省时间并强化自己编码的工具。</p>
+<p>当工作的项目时间紧迫时，使用PHP框架就有很多好处，可以大大加快编码进程，因此所以如果你时间紧迫，使用PHP框架就是很好的选择。另一个例子 是，当你所做的项目有大量代码时，也应当考虑使用PHP框架，因为这将有助于减少工作的繁琐度。</p>
+<p><strong>寻找一个什么样的PHP框架？</strong></p>
+<p>有许多可供开发者选择的PHP框架，甚至还可以创建自己的框架，尽管只建议PHP专家级这样做。当寻找你最需要的PHP框架时，重要的是要搞清楚谁 将自始至终使用或修改你的应用，如果是有很多人做这件事情，那么最好使用流行的PHP框架，这样大部分开发者都不会陌生。另一方面，如果你想构建Web应 用程序为你个人使用，那就最好选择令你满意的PHP框架，而不在乎它在开发者社区中是否流行。</p>
+<p>选择PHP框架的参考因素有很多，包括：容易使用、快速开发、性能、开发者中的流行程度、强大的功能，技术支持、论坛等。当你第一次选择PHP框架 时，为了找到一个适合你需求的最佳选择，建议多尝试几个。每个框架都有所不同，并有不同的长处和短处。例如Zend框架由于V3和多样的功能、并且有一个 广泛的支持系统，因而它流行了这么久。相反， CakePHP是另一个晚于Zend框架的PHP框架，相应的支持系统也比较少，但更方便和易于使用。</p>
+<p>正如你所看到的，每种类型的PHP框架都有自己的优点，因此，最好反复试验以找出其中哪个最适合你的需要。另一个选择PHP框架的有效方式是咨询你 的同事，看看开发社区里选择哪个。那些真正使用过具体框架的能够明确地告诉你它的易用性、功能、支持可用性、社区内的情况，当然可能还有不足。</p>
+<p><strong>使用PHP框架最常见的错误</strong></p>
+<p>任何类型的编程中都可能有错误，但是PHP框架有助于显著限制这些错误。重复编码似乎加剧了这种错误，而框架则解决了这一问题。尽管如此，在使用任 何PHP框架时仍要注意。例如，除非你是一位PHP编程的专家，否则你应该总是选择使用流行的框架，有大量的支持和积极的用户群。很多框架的支持很少甚至 没有，它们可能是被PHP知识有限的个别开发者所创建的。这些类型的框架，可能会使你的应用程序无法正常运行，更糟糕的是，可能会给你的网站带来灾难性的 安全问题。</p>
+<p>另一些常见的错误是，不能确保你的数据库和Web服务器符合特定框架。例如，Seagull PHP Framework建议如下配置：</p>
+<ul>
+<li><p>PHP ：最低是PHP 4.3.0，PHP 5.1.1或者更高版本更佳，避免任何5.0.x版本中的东西；</p>
+</li>
+<li><p>MySQL的：支持MySQL的4.0.x，4.1.x和5.0.x，也可以使用3.23.x；</p>
+</li>
+<li><p>Apache：Seagull支持1.3.x以及Apache的2.x系列。</p>
+</li>
+</ul>
+<p>如果你没有满足这些要求，您将无法在你所选的框架中看到最好的性能。即使你是PHP的专家，你也应该经常复习框架的说明文档，确认兼容性后再尝试。</p>
+<p>类似于前面提到的常见的错误，不遵循建议的安装进程的话，你的PHP框架也可以给你带来一些令人头疼的问题。以Seagull 为例，在Seagull的wiki有一个详细的框架安装过程，其中有几个关键步骤，很容易被不小心或不知情的开发者忽视。因此你要花费时间来安装框架并遵 循安装说明。</p>
+<p><strong>最好的PHP框架有哪些？</strong></p>
+<p>过去的几年中，因为PHP已发展成为大多数开发者选择的脚本语言，因而也产生了大量的PHP框架。什么是最好的PHP框架，仁者见仁智者见智，因为 并非每一个框架都能够适合每一个人。以下是5个最佳和最流行的PHP框架选择：</p>
+<p>The Zend Framework</p>
+<p><img src="http://articles.csdn.net/uploads/allimg/100127/1514512596-0.jpg" alt=""></p>
+<p>Zend Framework在开发者社区中很有人气，其重点是Web 2.0风格的应用程序。由于其大量的党羽、广泛的支持和积极的用户群，Zend被称为PHP Company。Zend即使不是当今最流行的PHP框架，也绝对是之一。它强大的功能能够满足企业级的需求，当然它的使用也需要具备广泛的PHP知识。</p>
+<p>CakePHP</p>
+<p><img src="http://articles.csdn.net/uploads/allimg/100127/15145123Y-1.jpg" alt=""></p>
+<p>从初学者到高级PHP开发者，CakePHP都是一个很棒的选择。它与 Ruby on Rails设计的原则基本相同，主要集中在快速开发方面使其成为一个快速应用开发的优良框架。其迅速增长的支持系统、简单和可扩展性使CakePHP成为 当今最热门的PHP框架。</p>
+<p>Symfony</p>
+<p><img src="http://articles.csdn.net/uploads/allimg/100127/1514514136-2.jpg" alt=""></p>
+<p>Symfony针对的更多的是高级开发者，也即创建企业级应用的开发者，尤其是Askeet和Yahoo! Bookmarks。这个开源的PHP框架功能全面，但它的主要缺点是速度慢于其他框架。</p>
+<p>CodeIgniter</p>
+<p><img src="http://articles.csdn.net/uploads/allimg/100127/151451B06-3.jpg" alt=""></p>
+<p>CodeIgniter以其易用性、性能和速度而闻名。不同于Symfony，CodeIgniter主要针对的是与人共享主机的开发者，或者为小 型设备寻找PHP框架的开发者。它提供简单的解决办法，而且有一个扩展库包括视频教程、论坛、用户指南和wiki。初学者应该考虑使用 CodeIgniter 。</p>
+<p>Seagull</p>
+<p><img src="http://articles.csdn.net/uploads/allimg/100127/1514511648-4.jpg" alt=""></p>
+<p>Seagull是一个稳定的用于构建web、命令行和GUI应用的PHP框架。这是一个非常易于使用的框架，非常适合初学者到高级程序员。对于初学 者，Seagull有一个范例应用库，可以自己设定后满足自身需求；对于高级开发者，Seagull提供了众多选择包括最佳实践、标准、模块化的代码基， 这些都可以帮助快速简单地构建Web应用程序。Seagull有一个活跃的开发者社区，内有大量的支持性文档和说明。</p>
+<p><strong>概括</strong></p>
+<p>PHP框架为各种技术等级的开发者减少了重复编码的需求、加快了开发进程，并在创建web应用时确保正确的编码。这不仅加快了富应用开发的进程，同 时也通过减少代码的安全漏洞而增强了PHP的安全性。</p>
+<p>虽然一些专家级PHP程序员觉得没有必要使用框架开发Web应用程序，但PHP框架仍然可以是快速开发的优秀解决方案，比如在工期很紧的情况下。从 初级到中级开发者，框架可以提高PHP的学习，同时促进良好的代码编写和减少坏代码。</p>
+<p>今天有很多的PHP框架可用，因此开发者肯定能从中找到一个适合自己的框架：功能、支持、速度、可扩展性等。开发者广泛使用的一些顶尖的PHP开发 框架包括： Zend Framework，CakePHP，Symfony，Codeigniter以及Seagull。</p>
+
+      
+    </div>
+    <footer>
+      
+        <div class="clearfix">
+        
+  
+  <div class="categories">
+    <a href="/categories/开发经验/">开发经验</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/php/">php</a>
+  </div>
+
+        </div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a></div>
+  
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/2010/06/07/upload-plugins/" class="alignleft prev" title="几款上传文件的插件">几款上传文件的插件</a>
+  
+  
+    <a href="/2010/06/10/21-jquery-slider-plugins/" class="alignright next" title="21个jQuery滑动门效果插件">21个jQuery滑动门效果插件</a>
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2010/06/10/php-framework/" data-title="开发者不可不知的PHP框架深度解析" data-url="/2010/06/10/php-framework/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"woiwebnet"};
+  (function() {
+    var ds = document.createElement('script'); 
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <script>
+  	function search(form) {
+  		if(form.wd.value == '') return false;
+
+  		window.open('//www.baidu.com/s?wd=' + encodeURIComponent(form.wd.value + ' site:woiweb.net'));
+  		return false;
+  	}
+  </script>
+  <form action="//www.baidu.com/s" method="get" accept-charset="utf-8" id="searchForm" onSubmit="return search(this);">
+    <input type="search" id="keyword" name="wd" results="0" placeholder="搜索">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li class="cat"><a href="/categories/前端观察/">前端观察</a><small>28</small></li>
+  
+    <li class="cat"><a href="/categories/免费资源/">免费资源</a><small>40</small></li>
+  
+    <li class="cat"><a href="/categories/开发经验/">开发经验</a><small>27</small></li>
+  
+    <li class="cat"><a href="/categories/前端工具/">前端工具</a><small>34</small></li>
+  
+    <li class="cat"><a href="/categories/Html-amp-Css/">Html &amp; Css</a><small>25</small></li>
+  
+    <li class="cat"><a href="/categories/设计灵感/">设计灵感</a><small>14</small></li>
+  
+    <li class="cat"><a href="/categories/JQuery/">JQuery</a><small>27</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <iframe id="weiboshow" width="100%" height="350" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/3d/" style="font-size: 12px;">3d</a> <a href="/tags/404/" style="font-size: 10px;">404</a> <a href="/tags/Authentication/" style="font-size: 10px;">Authentication</a> <a href="/tags/Firefox4/" style="font-size: 10px;">Firefox4</a> <a href="/tags/Gallery/" style="font-size: 11.33px;">Gallery</a> <a href="/tags/JQuery/" style="font-size: 19.33px;">JQuery</a> <a href="/tags/Tooltip/" style="font-size: 10px;">Tooltip</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/audio/" style="font-size: 10.67px;">audio</a> <a href="/tags/blog/" style="font-size: 10.67px;">blog</a> <a href="/tags/bootsrap/" style="font-size: 10px;">bootsrap</a> <a href="/tags/bootstrap/" style="font-size: 11.33px;">bootstrap</a> <a href="/tags/brush/" style="font-size: 10.67px;">brush</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cms/" style="font-size: 11.33px;">cms</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/development/" style="font-size: 12.67px;">development</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10.67px;">download</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/effects/" style="font-size: 10px;">effects</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/firebug/" style="font-size: 10px;">firebug</a> <a href="/tags/firefox/" style="font-size: 11.33px;">firefox</a> <a href="/tags/flash/" style="font-size: 13.33px;">flash</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/framework/" style="font-size: 10.67px;">framework</a> <a href="/tags/game/" style="font-size: 11.33px;">game</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/git/" style="font-size: 10.67px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitshell/" style="font-size: 10px;">gitshell</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/html/" style="font-size: 15.33px;">html</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/icon/" style="font-size: 14px;">icon</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10.67px;">ie6</a> <a href="/tags/iframe/" style="font-size: 12px;">iframe</a> <a href="/tags/ipad/" style="font-size: 10px;">ipad</a> <a href="/tags/iphone/" style="font-size: 10.67px;">iphone</a> <a href="/tags/java/" style="font-size: 11.33px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joomla/" style="font-size: 10px;">joomla</a> <a href="/tags/lightbox/" style="font-size: 10px;">lightbox</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/logo/" style="font-size: 13.33px;">logo</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/money/" style="font-size: 10px;">money</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/net/" style="font-size: 10px;">net</a> <a href="/tags/news/" style="font-size: 10px;">news</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/phone/" style="font-size: 10px;">phone</a> <a href="/tags/photoshop/" style="font-size: 14px;">photoshop</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/player/" style="font-size: 10.67px;">player</a> <a href="/tags/plugins/" style="font-size: 16px;">plugins</a> <a href="/tags/png/" style="font-size: 10px;">png</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/psd/" style="font-size: 11.33px;">psd</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-js/" style="font-size: 10px;">react.js</a> <a href="/tags/script/" style="font-size: 10px;">script</a> <a href="/tags/scrollbar/" style="font-size: 10px;">scrollbar</a> <a href="/tags/select/" style="font-size: 10px;">select</a> <a href="/tags/slide/" style="font-size: 10px;">slide</a> <a href="/tags/software/" style="font-size: 10px;">software</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/table/" style="font-size: 10px;">table</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/theme/" style="font-size: 14.67px;">theme</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tool/" style="font-size: 10.67px;">tool</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/tutorial/" style="font-size: 10.67px;">tutorial</a> <a href="/tags/tutorials/" style="font-size: 11.33px;">tutorials</a> <a href="/tags/ui/" style="font-size: 12.67px;">ui</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/wallpaper/" style="font-size: 10.67px;">wallpaper</a> <a href="/tags/web/" style="font-size: 10.67px;">web</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/windows/" style="font-size: 11.33px;">windows</a> <a href="/tags/wordpress/" style="font-size: 17.33px;">wordpress</a> <a href="/tags/xd/" style="font-size: 10.67px;">xd</a> <a href="/tags/中秋/" style="font-size: 10px;">中秋</a> <a href="/tags/免费资源/" style="font-size: 10.67px;">免费资源</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端工具/" style="font-size: 18.67px;">前端工具</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/播放器/" style="font-size: 10.67px;">播放器</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/设计灵感/" style="font-size: 18px;">设计灵感</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/跨域/" style="font-size: 12.67px;">跨域</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 woiweb
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script>
+$(window).load(function(){
+    $('#weiboshow').attr('src','http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1052981072&verifier=54068b01&dpc=1')
+});
+</script>
+
+  <img id="gotop" src="/img/gotop.png" />
+  <script>
+	!function(o){var t=1e3,n=o("#gotop"),c=500;n.hide(),o(window).scroll(function(){var c=o(document).scrollTop();c>t?o(n).stop().fadeTo(300,1):o(n).stop().fadeTo(300,0)}),o(n).click(function(){return o("html, body").animate({scrollTop:0},c),!1})}(jQuery);
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React 入门实例教程 | 我爱互联网</title>
+  <meta name="author" content="woiweb">
+  
+  <meta name="description" content="test">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="React 入门实例教程"/>
+  <meta property="og:site_name" content="我爱互联网"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="我爱互联网" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">我爱互联网</a></h1>
+  <h2><a href="/">前端技术，前端资讯</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/about">关于我</a></li>
+    
+      <li><a href="/contact">联系我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-03-31T19:31:49.000Z"><a href="/2015/04/01/react-tutorial/">2015-04-01</a></time>
+      
+      
+  
+    <h1 class="title">React 入门实例教程</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>现在最热门的前端框架，毫无疑问是 <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> 。</p>
+<p>上周，基于 React 的 <a href="http://facebook.github.io/react-native/" target="_blank" rel="external">React Native</a> 发布，结果一天之内，就获得了 5000 颗星，受瞩目程度可见一斑。</p>
+<a id="more"></a>
+<p>React 起源于 Facebook 的内部项目，因为该公司对市场上所有 <a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html" target="_blank" rel="external">JavaScript MVC 框架</a>，都不满意，就决定自己写一套，用来架设 <a href="https://instagram.com/" target="_blank" rel="external">Instagram</a> 的网站。做出来以后，发现这套东西很好用，就在2013年5月<a href="http://facebook.github.io/react/blog/2013/06/05/why-react.html" target="_blank" rel="external">开源</a>了。</p>
+<p><img src="http://image.beekka.com/blog/2015/bg2015033101.png" alt=""></p>
+<p>由于 React 的设计思想极其独特，属于革命性创新，性能出众，代码逻辑却非常简单。所以，越来越多的人开始关注和使用，认为它可能是将来 Web 开发的主流工具。</p>
+<p>这个项目本身也越滚越大，从最早的UI引擎变成了一整套前后端通吃的 Web App 解决方案。衍生的 React Native 项目，目标更是宏伟，希望用写 Web App 的方式去写 Native App。如果能够实现，整个互联网行业都会被颠覆，因为同一组人只需要写一次 UI ，就能同时运行在服务器、浏览器和手机（参见<a href="http://www.ruanyifeng.com/blog/2015/02/future-of-dom.html" target="_blank" rel="external">《也许，DOM 不是答案》</a>）。</p>
+<p><img src="http://image.beekka.com/blog/2015/bg2015031302.jpg" alt=""></p>
+<p>既然 React 这么热门，看上去充满希望，当然应该好好学一下。从技术角度，可以满足好奇心，提高技术水平；从职业角度，有利于求职和晋升，有利于参与潜力大的项目。但是，好的 React 教程却不容易找到，这一方面因为这项技术太新，刚刚开始走红，大家都没有经验，还在摸索之中；另一方面因为 React 本身还在不断变动，API 一直在调整，至今没发布1.0版。</p>
+<p><a href="https://github.com/ruanyf/react-demos" target="_blank" rel="external"><img src="http://image.beekka.com/blog/2015/bg2015033103.png" alt=""></a></p>
+<p>我学习 React 时，就很苦恼。有的教程讨论一些细节问题，对入门没帮助；有的教程写得不错，但比较短，无助于看清全貌。我断断续续学了几个月，看过二十几篇教程，在这个过程中，将对自己有帮助的 Demo 都收集下来，做成了一个库 <a href="https://github.com/ruanyf/react-demos" target="_blank" rel="external">React Demos</a> 。</p>
+<p><a href="https://github.com/ruanyf/react-demos" target="_blank" rel="external"><img src="http://image.beekka.com/blog/2015/bg2015033104.png" alt=""></a></p>
+<p>下面，我就根据<a href="https://github.com/ruanyf/react-demos" target="_blank" rel="external">这个库</a>，写一篇全面又易懂的 React 入门教程。你只需要跟着每一个 Demo 做一遍，就能初步掌握 React 。当然，前提是你必须拥有基本 JavaScript 和 DOM 知识，但是你读完就会发现，React 所要求的预备知识真的很少。</p>
+<h3 id="零、安装">零、安装</h3><p>React 的安装包，可以到<a href="https://facebook.github.io/react/downloads.html" target="_blank" rel="external">官网</a>下载。不过，<a href="https://github.com/ruanyf/react-demos" target="_blank" rel="external">React Demos</a> 已经自带 React 源码，不用另外安装，只需把这个库拷贝到你的硬盘就行了。</p>
+<pre class="brush: js">
+$ git clone git@github.com:ruanyf/react-demos.git
+</pre>
+
+<p>如果你没安装 git， 那就直接下载 <a href="https://github.com/ruanyf/react-demos/archive/master.zip" target="_blank" rel="external">zip 压缩包</a>。</p>
+<p><a href="https://github.com/ruanyf/react-demos" target="_blank" rel="external"><img src="http://image.beekka.com/blog/2015/bg2015033105.png" alt=""></a></p>
+<p>下面要讲解的10个例子在各个 Demo 子目录，每个目录都有一个 index.html 文件，在浏览器打开这个文件（大多数情况下双击即可），就能立刻看到效果。</p>
+<p>需要说明的是，React 可以在浏览器运行，也可以在服务器运行，但是本教程只涉及浏览器。一方面是为了尽量保持简单，另一方面 React 的语法是一致的，服务器的用法与浏览器差别不大。<a href="https://github.com/ruanyf/react-demos/tree/master/demo11" target="_blank" rel="external">Demo11</a>  是服务器首屏渲染的例子，有兴趣的朋友可以自己去看源码。</p>
+<h3 id="一、HTML_模板">一、HTML 模板</h3><p>使用 React 的网页源码，结构大致如下。</p>
+<pre class="brush:js">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="../build/react.js"&gt;&lt;/script&gt;
+    &lt;script src="../build/JSXTransformer.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="example"&gt;&lt;/div&gt;
+    &lt;script type="text/jsx"&gt;
+      // ** Our code goes here! **
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>上面代码有两个地方需要注意。首先，最后一个 script 标签的 type 属性为 text/jsx 。这是因为 React 独有的 JSX 语法，跟 JavaScript 不兼容。凡是使用 JSX 的地方，都要加上 type=”text/jsx” 。 </p>
+<p>其次，React 提供两个库： react.js 和 JSXTransformer.js ，它们必须首先加载。其中，JSXTransformer.js 的作用是将 JSX 语法转为 JavaScript 语法。这一步很消耗时间，实际上线的时候，应该将它放到服务器完成。</p>
+<pre class="brush: js">
+$ jsx src/ build/
+</pre>
+
+<p>上面命令可以将 src 子目录的 js 文件进行语法转换，转码后的文件全部放在 build 子目录。</p>
+<h3 id="二、React-render()">二、React.render()</h3><p>React.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。</p>
+<pre class="brush:js">
+React.render(
+  &lt;h1>Hello, world!&lt;/h1>,
+  document.getElementById('example')
+);
+</pre>
+
+<p>上面代码将一个 h1 标题，插入 example 节点（查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo01/index.html" target="_blank" rel="external">demo01</a>），运行结果如下。</p>
+<p><img src="http://image.beekka.com/blog/2015/bg2015033109.png" alt=""></p>
+<h3 id="三、JSX_语法">三、JSX 语法</h3><p>上一节的代码， HTML 语言直接写在 JavaScript 语言之中，不加任何引号，这就是 <a href="http://facebook.github.io/react/docs/displaying-data.html#jsx-syntax" target="_blank" rel="external">JSX 的语法</a>，它允许 HTML 与 JavaScript 的混写（查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo02/index.html" target="_blank" rel="external">Demo02</a> ）。</p>
+<pre class="brush:js">
+var names = ['Alice', 'Emily', 'Kate'];
+
+React.render(
+  &lt;div>
+  {
+    names.map(function (name) {
+      return &lt;div>Hello, {name}!&lt;/div>
+    })
+  }
+  &lt;/div>,
+  document.getElementById('example')
+);
+</pre>
+
+<p>上面代码体现了 JSX 的基本语法规则：遇到 HTML 标签（以 &lt; 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析。上面代码的运行结果如下。</p>
+<p><img src="http://image.beekka.com/blog/2015/bg2015033106.png" alt=""></p>
+<p>JSX 允许直接在模板插入 JavaScript 变量。如果这个变量是一个数组，则会展开这个数组的所有成员（查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo03/index.html" target="_blank" rel="external">demo03</a> ）。</p>
+<pre class="brush:js">
+var arr = [
+  &lt;h1>Hello world!&lt;/h1>,
+  &lt;h3>React is awesome&lt;/h3>,
+];
+React.render(
+  &lt;div>{arr}&lt;/div>,
+  document.getElementById('example')
+);
+</pre>
+
+<p>上面代码的arr变量是一个数组，结果 JSX 会把它的所有成员，添加到模板，运行结果如下。</p>
+<p><img src="http://image.beekka.com/blog/2015/bg2015033107.png" alt=""></p>
+<h3 id="四、组件">四、组件</h3><p>React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个组件。React.createClass 方法就用于生成一个组件类（查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo04/index.html" target="_blank" rel="external">demo04</a>）。</p>
+<pre class="brush:js">
+var HelloMessage = React.createClass({
+  render: function() {
+    return &lt;h1>Hello {this.props.name}&lt;/h1>;
+  }
+});
+
+React.render(
+  &lt;HelloMessage name="John" />,
+  document.getElementById('example')
+);
+</pre>
+
+<p>上面代码中，变量 HelloMessage 就是一个组件类。模板插入 &lt;HelloMessage /&gt; 时，会自动生成 HelloMessage 的一个实例（下文的”组件”都指组件类的实例）。所有组件类都必须有自己的 render 方法，用于输出组件。</p>
+<p>组件的用法与原生的 HTML 标签完全一致，可以任意加入属性，比如 &lt;HelloMessage  name=”John” /&gt; ，就是 HelloMessage 组件加入一个 name 属性，值为 John。组件的属性可以在组件类的 this.props 对象上获取，比如 name 属性就可以通过 this.props.name 读取。上面代码的运行结果如下。</p>
+<p><img src="http://image.beekka.com/blog/2015/bg2015033108.png" alt=""></p>
+<p>添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class 和 for 是 JavaScript 的保留字。</p>
+<h3 id="五、this-props-children">五、this.props.children</h3><p>this.props 对象的属性与组件的属性一一对应，但是有一个例外，就是 this.props.children 属性。它表示组件的所有子节点（查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo05/index.html" target="_blank" rel="external">demo05</a>）。</p>
+<pre class="brush:js">
+var NotesList = React.createClass({
+  render: function() {
+    return (
+      &lt;ol>
+      {
+        this.props.children.map(function (child) {
+          return &lt;li>{child}&lt;/li>
+        })
+      }
+      &lt/ol>
+    );
+  }
+});
+
+React.render(
+  &lt;NotesList>
+    &lt;span>hello&lt;/span>
+    &lt;span>world&lt;/span>
+  &lt;/NotesList>,
+  document.body
+);
+</pre>
+
+<p>上面代码的 NoteList 组件有两个 span 子节点，它们都可以通过 this.props.children 读取，运行结果如下。</p>
+<p><img src="http://image.beekka.com/blog/2015/bg2015033110.png" alt=""></p>
+<p>这里需要注意，只有当子节点多余1个时，this.props.children 才是一个数组，否则是不能用 map 方法的， 会报错。</p>
+<h3 id="六、React-findDOMNode()">六、React.findDOMNode()</h3><p>组件并不是真实的 DOM 节点，而是存在于内存之中的一种数据结构，叫做虚拟 DOM （virtual DOM）。只有当它插入文档以后，才会变成真实的 DOM 。根据 React 的设计，所有的 DOM 变动，都先在虚拟 DOM 上发生，然后再将实际发生变动的部分，反映在真实 DOM上，这种算法叫做 <a href="http://calendar.perfplanet.com/2013/diff/" target="_blank" rel="external">DOM diff</a> ，它可以极大提高网页的性能表现。</p>
+<p>但是，有时需要从组件获取真实 DOM 的节点，这时就要用到 React.findDOMNode 方法（查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo06/index.html" target="_blank" rel="external">demo06</a> ）。</p>
+<pre class="brush:js">
+var MyComponent = React.createClass({
+  handleClick: function() {
+    React.findDOMNode(this.refs.myTextInput).focus();
+  },
+  render: function() {
+    return (
+      &lt;div>
+        &lt;input type="text" ref="myTextInput" />
+        &lt;input type="button" value="Focus the text input" onClick={this.handleClick} />
+      &lt;/div>
+    );
+  }
+});
+
+React.render(
+  &lt;MyComponent />,
+  document.getElementById('example')
+);
+</pre>
+
+<p>上面代码中，组件 MyComponent 的子节点有一个文本输入框，用于获取用户的输入。这时就必须获取真实的 DOM 节点，虚拟 DOM 是拿不到用户输入的。为了做到这一点，文本输入框必须有一个 ref 属性，然后 this.refs.[refName] 就指向这个虚拟 DOM 的子节点，最后通过 React.findDOMNode 方法获取真实 DOM 的节点。</p>
+<p>需要注意的是，由于 React.findDOMNode 方法获取的是真实 DOM ，所以必须等到虚拟 DOM 插入文档以后，才能使用这个方法，否则会返回 null 。上面代码中，通过为组件指定 Click 事件的回调函数，确保了只有等到真实 DOM 发生 Click 事件之后，才会调用 React.findDOMNode 方法。</p>
+<p>React 组件支持很多事件，除了 Click 事件以外，还有 KeyDown 、Copy、Scroll 等，完整的事件清单请查看<a href="http://facebook.github.io/react/docs/events.html#supported-events" target="_blank" rel="external">官方文档</a>。</p>
+<h3 id="七、this-state">七、this.state</h3><p>组件免不了要与用户互动，React 的一大创新，就是将组件看成是一个状态机，一开始有一个初始状态，然后用户互动，导致状态变化，从而触发重新渲染 UI （查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo07/index.html" target="_blank" rel="external">demo07</a> ）。</p>
+<pre class="brush:js">
+var LikeButton = React.createClass({
+  getInitialState: function() {
+    return {liked: false};
+  },
+  handleClick: function(event) {
+    this.setState({liked: !this.state.liked});
+  },
+  render: function() {
+    var text = this.state.liked ? 'like' : 'haven\'t liked';
+    return (
+      &lt;p onClick={this.handleClick}>
+        You {text} this. Click to toggle.
+      &lt;/p>
+    );
+  }
+});
+
+React.render(
+  &lt;LikeButton />,
+  document.getElementById('example')
+);
+</pre>
+
+<p>上面代码是一个 LikeButton 组件，它的 getInitialState 方法用于定义初始状态，也就是一个对象，这个对象可以通过 this.state 属性读取。当用户点击组件，导致状态变化，this.setState 方法就修改状态值，每次修改以后，自动调用 this.render 方法，再次渲染组件。</p>
+<p>由于 this.props 和 this.state 都用于描述组件的特性，可能会产生混淆。一个简单的区分方法是，this.props 表示那些一旦定义，就不再改变的特性，而 this.state 是会随着用户互动而产生变化的特性。</p>
+<h3 id="八、表单">八、表单</h3><p>用户在表单填入的内容，属于用户跟组件的互动，所以不能用 this.props 读取（查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo08/index.html" target="_blank" rel="external">demo08</a> ）。</p>
+<pre class="brush:js">
+var Input = React.createClass({
+  getInitialState: function() {
+    return {value: 'Hello!'};
+  },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
+  render: function () {
+    var value = this.state.value;
+    return (
+      &lt;div>
+        &lt;input type="text" value={value} onChange={this.handleChange} />
+        &lt;p>{value}&lt;/p>
+      &lt;/div>
+    );
+  }
+});
+
+React.render(&lt;Input/>, document.body);
+</pre>
+
+<p>上面代码中，文本输入框的值，不能用 this.props.value 读取，而要定义一个 onChange 事件的回调函数，通过 event.target.value 读取用户输入的值。textarea 元素、select元素、radio元素都属于这种情况，更多介绍请参考<a href="http://facebook.github.io/react/docs/forms.html" target="_blank" rel="external">官方文档</a>。</p>
+<h3 id="九、组件的生命周期">九、组件的生命周期</h3><p>组件的<a href="https://facebook.github.io/react/docs/working-with-the-browser.html#component-lifecycle" target="_blank" rel="external">生命周期</a>分成三个状态：</p>
+<ul>
+<li>Mounting：已插入真实 DOM</li>
+<li>Updating：正在被重新渲染</li>
+<li>Unmounting：已移出真实 DOM</li>
+</ul>
+<p>React 为每个状态都提供了两种处理函数，will 函数在进入状态之前调用，did 函数在进入状态之后调用，三种状态共计五种处理函数。</p>
+<ul>
+<li>componentWillMount()</li>
+<li>componentDidMount()</li>
+<li>componentWillUpdate(object nextProps, object nextState)</li>
+<li>componentDidUpdate(object prevProps, object prevState)</li>
+<li>componentWillUnmount()</li>
+</ul>
+<p>此外，React 还提供两种特殊状态的处理函数。</p>
+<ul>
+<li>componentWillReceiveProps(object nextProps)：已加载组件收到新的参数时调用</li>
+<li>shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用</li>
+</ul>
+<p>这些方法的详细说明，可以参考<a href="http://facebook.github.io/react/docs/component-specs.html#lifecycle-methods" target="_blank" rel="external">官方文档</a>。下面是一个例子（查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo09/index.html" target="_blank" rel="external">demo09</a> ）。</p>
+<p>这是因为 <a href="https://facebook.github.io/react/tips/inline-styles.html" target="_blank" rel="external">React 组件样式</a>是一个对象，所以第一重大括号表示这是 JavaScript 语法，第二重大括号表示样式对象。</p>
+<h3 id="十、Ajax">十、Ajax</h3><p>组件的数据来源，通常是通过 Ajax 请求从服务器获取，可以使用 componentDidMount 方法设置 Ajax 请求，等到请求成功，再用 this.setState 方法重新渲染 UI （查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo10/index.html" target="_blank" rel="external">demo10</a> ）。</p>
+<pre class="brush:js">
+var UserGist = React.createClass({
+  getInitialState: function() {
+    return {
+      username: '',
+      lastGistUrl: ''
+    };
+  },
+
+  componentDidMount: function() {
+    $.get(this.props.source, function(result) {
+      var lastGist = result[0];
+      if (this.isMounted()) {
+        this.setState({
+          username: lastGist.owner.login,
+          lastGistUrl: lastGist.html_url
+        });
+      }
+    }.bind(this));
+  },
+
+  render: function() {
+    return (
+      &lt;div>
+        {this.state.username}'s last gist is
+        &lt;a href={this.state.lastGistUrl}>here&lt;/a>.
+      &lt;/div>
+    );
+  }
+});
+
+React.render(
+  &lt;UserGist source="https://api.github.com/users/octocat/gists" />,
+  document.body
+);
+</pre>
+
+<p>上面代码使用 jQuery 完成 Ajax 请求，这是为了便于说明。React 没有任何依赖，完全可以使用其他库。</p>
+<h3 id="十一、参考链接">十一、参考链接</h3><ol>
+<li><a href="http://facebook.github.io/react" target="_blank" rel="external">React’s official site</a></li>
+<li><a href="https://github.com/facebook/react/tree/master/examples" target="_blank" rel="external">React’s official examples</a></li>
+<li><a href="http://facebook.github.io/react/docs/glossary.html" target="_blank" rel="external">React (Virtual) DOM Terminology</a>, by Sebastian Markbåge</li>
+<li><a href="http://www.jackcallister.com/2015/01/05/the-react-quick-start-guide.html" target="_blank" rel="external">The React Quick Start Guide</a>, by Jack Callister</li>
+<li><a href="https://scotch.io/tutorials/learning-react-getting-started-and-concepts" target="_blank" rel="external">Learning React.js: Getting Started and Concepts</a>, by Ken Wheeler</li>
+<li><a href="http://ryanclark.me/getting-started-with-react/" target="_blank" rel="external">Getting started with React</a>, by Ryan Clark</li>
+<li><a href="https://zapier.com/engineering/react-js-tutorial-guide-gotchas/" target="_blank" rel="external">React JS Tutorial and Guide to the Gotchas</a>, by Justin Deal</li>
+<li><a href="https://github.com/BinaryMuse/react-primer" target="_blank" rel="external">React Primer</a>, by Binary Muse</li>
+<li><a href="http://blog.zigomir.com/react.js/jquery/2015/01/11/jquery-versus-react-thinking.html" target="_blank" rel="external">jQuery versus React.js thinking</a>, by zigomir</li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        <div class="clearfix">
+        
+  
+  <div class="categories">
+    <a href="/categories/免费资源/">免费资源</a>, <a href="/categories/免费资源/前端工具/">前端工具</a>, <a href="/categories/免费资源/前端工具/前端观察/">前端观察</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/facebook/">facebook</a>, <a href="/tags/mvc/">mvc</a>, <a href="/tags/react/">react</a>, <a href="/tags/react-js/">react.js</a>
+  </div>
+
+        </div>
+        
+  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a></div>
+  
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+      
+      <div class="clearfix"></div>
+
+      
+<div class="pagepart clearfix">
+  
+    <a href="/2014/02/24/linux-nodejs-install/" class="alignleft prev" title="Linux下安装Nodejs">Linux下安装Nodejs</a>
+  
+    
+</div>
+
+
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2015/04/01/react-tutorial/" data-title="React 入门实例教程" data-url="/2015/04/01/react-tutorial/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"woiwebnet"};
+  (function() {
+    var ds = document.createElement('script'); 
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+<script src="/js/syntaxhighlighter3/script/shCore.js"></script>
+<script src="/js/syntaxhighlighter3/styles/shCore.css"></script>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <script>
+  	function search(form) {
+  		if(form.wd.value == '') return false;
+
+  		window.open('//www.baidu.com/s?wd=' + encodeURIComponent(form.wd.value + ' site:woiweb.net'));
+  		return false;
+  	}
+  </script>
+  <form action="//www.baidu.com/s" method="get" accept-charset="utf-8" id="searchForm" onSubmit="return search(this);">
+    <input type="search" id="keyword" name="wd" results="0" placeholder="搜索">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li class="cat"><a href="/categories/前端观察/">前端观察</a><small>28</small></li>
+  
+    <li class="cat"><a href="/categories/免费资源/">免费资源</a><small>40</small></li>
+  
+    <li class="cat"><a href="/categories/开发经验/">开发经验</a><small>27</small></li>
+  
+    <li class="cat"><a href="/categories/前端工具/">前端工具</a><small>34</small></li>
+  
+    <li class="cat"><a href="/categories/Html-amp-Css/">Html &amp; Css</a><small>25</small></li>
+  
+    <li class="cat"><a href="/categories/设计灵感/">设计灵感</a><small>14</small></li>
+  
+    <li class="cat"><a href="/categories/JQuery/">JQuery</a><small>27</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+  <iframe id="weiboshow" width="100%" height="350" class="share_self" frameborder="0" scrolling="no" src=""></iframe>
+</div>
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/3d/" style="font-size: 12px;">3d</a> <a href="/tags/404/" style="font-size: 10px;">404</a> <a href="/tags/Authentication/" style="font-size: 10px;">Authentication</a> <a href="/tags/Firefox4/" style="font-size: 10px;">Firefox4</a> <a href="/tags/Gallery/" style="font-size: 11.33px;">Gallery</a> <a href="/tags/JQuery/" style="font-size: 19.33px;">JQuery</a> <a href="/tags/Tooltip/" style="font-size: 10px;">Tooltip</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/audio/" style="font-size: 10.67px;">audio</a> <a href="/tags/blog/" style="font-size: 10.67px;">blog</a> <a href="/tags/bootsrap/" style="font-size: 10px;">bootsrap</a> <a href="/tags/bootstrap/" style="font-size: 11.33px;">bootstrap</a> <a href="/tags/brush/" style="font-size: 10.67px;">brush</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/calendar/" style="font-size: 10px;">calendar</a> <a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cms/" style="font-size: 11.33px;">cms</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16px;">css3</a> <a href="/tags/development/" style="font-size: 12.67px;">development</a> <a href="/tags/domain/" style="font-size: 10px;">domain</a> <a href="/tags/download/" style="font-size: 10.67px;">download</a> <a href="/tags/editor/" style="font-size: 10px;">editor</a> <a href="/tags/effects/" style="font-size: 10px;">effects</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/firebug/" style="font-size: 10px;">firebug</a> <a href="/tags/firefox/" style="font-size: 11.33px;">firefox</a> <a href="/tags/flash/" style="font-size: 13.33px;">flash</a> <a href="/tags/font/" style="font-size: 10px;">font</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/framework/" style="font-size: 10.67px;">framework</a> <a href="/tags/game/" style="font-size: 11.33px;">game</a> <a href="/tags/gesture/" style="font-size: 10px;">gesture</a> <a href="/tags/gif/" style="font-size: 10px;">gif</a> <a href="/tags/git/" style="font-size: 10.67px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitshell/" style="font-size: 10px;">gitshell</a> <a href="/tags/grid/" style="font-size: 10px;">grid</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/html/" style="font-size: 15.33px;">html</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/icon/" style="font-size: 14px;">icon</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/ie6/" style="font-size: 10.67px;">ie6</a> <a href="/tags/iframe/" style="font-size: 12px;">iframe</a> <a href="/tags/ipad/" style="font-size: 10px;">ipad</a> <a href="/tags/iphone/" style="font-size: 10.67px;">iphone</a> <a href="/tags/java/" style="font-size: 11.33px;">java</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joomla/" style="font-size: 10px;">joomla</a> <a href="/tags/lightbox/" style="font-size: 10px;">lightbox</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/loading/" style="font-size: 10px;">loading</a> <a href="/tags/logo/" style="font-size: 13.33px;">logo</a> <a href="/tags/mobile/" style="font-size: 12px;">mobile</a> <a href="/tags/money/" style="font-size: 10px;">money</a> <a href="/tags/movie/" style="font-size: 10px;">movie</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/nature/" style="font-size: 10px;">nature</a> <a href="/tags/net/" style="font-size: 10px;">net</a> <a href="/tags/news/" style="font-size: 10px;">news</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/open-source/" style="font-size: 10px;">open source</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/phone/" style="font-size: 10px;">phone</a> <a href="/tags/photoshop/" style="font-size: 14px;">photoshop</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/player/" style="font-size: 10.67px;">player</a> <a href="/tags/plugins/" style="font-size: 16px;">plugins</a> <a href="/tags/png/" style="font-size: 10px;">png</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/psd/" style="font-size: 11.33px;">psd</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-js/" style="font-size: 10px;">react.js</a> <a href="/tags/script/" style="font-size: 10px;">script</a> <a href="/tags/scrollbar/" style="font-size: 10px;">scrollbar</a> <a href="/tags/select/" style="font-size: 10px;">select</a> <a href="/tags/slide/" style="font-size: 10px;">slide</a> <a href="/tags/software/" style="font-size: 10px;">software</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/table/" style="font-size: 10px;">table</a> <a href="/tags/template/" style="font-size: 10px;">template</a> <a href="/tags/theme/" style="font-size: 14.67px;">theme</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tool/" style="font-size: 10.67px;">tool</a> <a href="/tags/touch/" style="font-size: 10px;">touch</a> <a href="/tags/tutorial/" style="font-size: 10.67px;">tutorial</a> <a href="/tags/tutorials/" style="font-size: 11.33px;">tutorials</a> <a href="/tags/ui/" style="font-size: 12.67px;">ui</a> <a href="/tags/upload/" style="font-size: 10px;">upload</a> <a href="/tags/wallpaper/" style="font-size: 10.67px;">wallpaper</a> <a href="/tags/web/" style="font-size: 10.67px;">web</a> <a href="/tags/webgl/" style="font-size: 10px;">webgl</a> <a href="/tags/webkit/" style="font-size: 10px;">webkit</a> <a href="/tags/website/" style="font-size: 10px;">website</a> <a href="/tags/windows/" style="font-size: 11.33px;">windows</a> <a href="/tags/wordpress/" style="font-size: 17.33px;">wordpress</a> <a href="/tags/xd/" style="font-size: 10.67px;">xd</a> <a href="/tags/中秋/" style="font-size: 10px;">中秋</a> <a href="/tags/免费资源/" style="font-size: 10.67px;">免费资源</a> <a href="/tags/创业/" style="font-size: 10px;">创业</a> <a href="/tags/前端工具/" style="font-size: 18.67px;">前端工具</a> <a href="/tags/图表/" style="font-size: 10px;">图表</a> <a href="/tags/插件/" style="font-size: 10px;">插件</a> <a href="/tags/播放器/" style="font-size: 10.67px;">播放器</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/设计灵感/" style="font-size: 18px;">设计灵感</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/跨域/" style="font-size: 12.67px;">跨域</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 woiweb
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script>
+$(window).load(function(){
+    $('#weiboshow').attr('src','http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=350&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1052981072&verifier=54068b01&dpc=1')
+});
+</script>
+
+  <img id="gotop" src="/img/gotop.png" />
+  <script>
+	!function(o){var t=1e3,n=o("#gotop"),c=500;n.hide(),o(window).scroll(function(){var c=o(document).scrollTop();c>t?o(n).stop().fadeTo(300,1):o(n).stop().fadeTo(300,0)}),o(n).click(function(){return o("html, body").animate({scrollTop:0},c),!1})}(jQuery);
+  </script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>
