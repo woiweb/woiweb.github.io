@@ -25,7 +25,7 @@
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * along with SyntaxHighlighter.  If not, see <http: www.gnu.org="" copyleft="" lesser.html="">.
  */
 SyntaxHighlighter.brushes.Java = function()
 {
@@ -50,10 +50,10 @@ SyntaxHighlighter.brushes.Java = function()
 		];
 
 	this.forHtmlScript({
-		left	: /(&lt;|<)%[@!=]?/g, 
-		right	: /%(&gt;|>)/g 
+		left	: /(&lt;|<)%[@!=]? g,="" right="" :="" %(&gt;|="">)/g 
 	});
 };
 
 SyntaxHighlighter.brushes.Java.prototype	= new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Java.aliases		= ['java'];
+</)%[@!=]?></http:>

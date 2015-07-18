@@ -25,7 +25,7 @@
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * along with SyntaxHighlighter.  If not, see <http: www.gnu.org="" copyleft="" lesser.html="">.
  */
 SyntaxHighlighter.brushes.Delphi = function()
 {
@@ -55,3 +55,4 @@ SyntaxHighlighter.brushes.Delphi = function()
 
 SyntaxHighlighter.brushes.Delphi.prototype	= new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Delphi.aliases	= ['delphi', 'pascal', 'pas'];
+</http:>

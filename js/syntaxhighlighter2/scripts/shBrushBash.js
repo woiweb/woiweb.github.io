@@ -25,7 +25,7 @@
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * along with SyntaxHighlighter.  If not, see <http: www.gnu.org="" copyleft="" lesser.html="">.
  */
 SyntaxHighlighter.brushes.Bash = function()
 {
@@ -48,19 +48,4 @@ SyntaxHighlighter.brushes.Bash = function()
 	
 	this.findMatches = function(regexList, code)
 	{
-		code = code.replace(/&gt;/g, '>').replace(/&lt;/g, '<');
-		this.code = code;
-		return SyntaxHighlighter.Highlighter.prototype.findMatches.apply(this, [regexList, code]);
-	};
-
-	this.regexList = [
-		{ regex: SyntaxHighlighter.regexLib.singleLinePerlComments,		css: 'comments' },		// one line comments
-		{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,			css: 'string' },		// double quoted strings
-		{ regex: SyntaxHighlighter.regexLib.singleQuotedString,			css: 'string' },		// single quoted strings
-		{ regex: new RegExp(this.getKeywords(keywords), 'gm'),			css: 'keyword' },		// keywords
-		{ regex: new RegExp(this.getKeywords(commands), 'gm'),			css: 'functions' }		// commands
-		];
-}
-
-SyntaxHighlighter.brushes.Bash.prototype	= new SyntaxHighlighter.Highlighter();
-SyntaxHighlighter.brushes.Bash.aliases		= ['bash', 'shell'];
+		code = code.replace(/&gt;/g, '>').replace(/&lt;/g, '</http:>

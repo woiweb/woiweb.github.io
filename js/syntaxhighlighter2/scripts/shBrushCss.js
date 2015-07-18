@@ -25,7 +25,7 @@
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * along with SyntaxHighlighter.  If not, see <http: www.gnu.org="" copyleft="" lesser.html="">.
  */
 SyntaxHighlighter.brushes.CSS = function()
 {
@@ -85,9 +85,10 @@ SyntaxHighlighter.brushes.CSS = function()
 
 	this.forHtmlScript({ 
 		left: /(&lt;|<)\s*style.*?(&gt;|>)/gi, 
-		right: /(&lt;|<)\/\s*style\s*(&gt;|>)/gi 
+		right: /(&lt;|<)\ \s*style\s*(&gt;|="">)/gi 
 		});
 };
 
 SyntaxHighlighter.brushes.CSS.prototype	= new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.CSS.aliases	= ['css'];
+</)\></)\s*style.*?(&gt;|></http:>

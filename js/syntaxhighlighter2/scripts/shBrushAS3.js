@@ -25,7 +25,7 @@
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * along with SyntaxHighlighter.  If not, see <http: www.gnu.org="" copyleft="" lesser.html="">.
  */
 SyntaxHighlighter.brushes.AS3 = function()
 {
@@ -59,3 +59,4 @@ SyntaxHighlighter.brushes.AS3 = function()
 
 SyntaxHighlighter.brushes.AS3.prototype	= new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.AS3.aliases	= ['actionscript3', 'as3'];
+</http:>

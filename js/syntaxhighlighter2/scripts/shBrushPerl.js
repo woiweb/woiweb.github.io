@@ -25,7 +25,7 @@
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * along with SyntaxHighlighter.  If not, see <http: www.gnu.org="" copyleft="" lesser.html="">.
  */
 SyntaxHighlighter.brushes.Perl = function()
 {
@@ -71,4 +71,4 @@ SyntaxHighlighter.brushes.Perl = function()
 }
 
 SyntaxHighlighter.brushes.Perl.prototype	= new SyntaxHighlighter.Highlighter();
-SyntaxHighlighter.brushes.Perl.aliases		= ['perl', 'Perl', 'pl'];
+SyntaxHighlighter.brushes.Perl.aliases		= ['perl', 'Perl', 'pl'];</http:>

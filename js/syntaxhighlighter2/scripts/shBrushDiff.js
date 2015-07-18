@@ -25,7 +25,7 @@
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * along with SyntaxHighlighter.  If not, see <http: www.gnu.org="" copyleft="" lesser.html="">.
  */
 SyntaxHighlighter.brushes.Diff = function()
 {
@@ -41,3 +41,4 @@ SyntaxHighlighter.brushes.Diff = function()
 
 SyntaxHighlighter.brushes.Diff.prototype	= new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Diff.aliases		= ['diff', 'patch'];
+</http:>

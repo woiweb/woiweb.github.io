@@ -25,7 +25,7 @@
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
+ * along with SyntaxHighlighter.  If not, see <http: www.gnu.org="" copyleft="" lesser.html="">.
  */
 SyntaxHighlighter.brushes.Xml = function()
 {
@@ -33,7 +33,7 @@ SyntaxHighlighter.brushes.Xml = function()
 	{
 		var constructor = SyntaxHighlighter.Match,
 			code = match[0],
-			tag = new XRegExp('(&lt;|<)[\\s\\/\\?]*(?<name>[:\\w-\\.]+)', 'xg').exec(code),
+			tag = new XRegExp('(&lt;|<)[\\s\\ \\?]*(?<name="">[:\\w-\\.]+)', 'xg').exec(code),
 			result = []
 			;
 		
@@ -63,9 +63,10 @@ SyntaxHighlighter.brushes.Xml = function()
 	this.regexList = [
 		{ regex: new XRegExp('(\\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)', 'gm'),			css: 'color2' },	// <![ ... [ ... ]]>
 		{ regex: SyntaxHighlighter.regexLib.xmlComments,												css: 'comments' },	// <!-- ... -->
-		{ regex: new XRegExp('(&lt;|<)[\\s\\/\\?]*(\\w+)(?<attributes>.*?)[\\s\\/\\?]*(&gt;|>)', 'sg'), func: process }
+		{ regex: new XRegExp('(&lt;|<)[\\s\\ \\?]*(\\w+)(?<attributes="">.*?)[\\s\\/\\?]*(&gt;|>)', 'sg'), func: process }
 	];
 };
 
 SyntaxHighlighter.brushes.Xml.prototype	= new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Xml.aliases	= ['xml', 'xhtml', 'xslt', 'html'];
+</)[\\s\\></)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|></value></name></)[\\s\\></http:>
