@@ -125,6 +125,11 @@ a:hover {
   line-height: 1;
   margin-top: 10px;
 }
+#hader .topad {
+  float: left;
+  margin-left: 125px;
+  width: 468px;
+}
 #header #main-nav {
   font-family: "Microsoft YaHei", tahoma, sans-serif;
   line-height: 2.5em;
@@ -704,6 +709,12 @@ article footer .addthis iframe {
   padding: 0 4px;
   margin: 2px 0;
 }
+#sidebar .sidead{
+  margin-bottom 20px;
+  background: #fff;
+  text-align: center;
+}
+    
 #footer {
   color: #999;
   margin-bottom: 50px;
