@@ -44,7 +44,7 @@ h3 {
 }
 a {
   text-decoration: none;
-  color: #258fb8;
+  color: #1ba1e2;
 }
 a:hover {
   text-decoration: underline;
@@ -109,7 +109,7 @@ a:hover {
 }
 #header a.logo {
   color: #1ba1e2;
-  text-shadow: 1px 1px 0px #258fb8;
+  text-shadow: 1px 1px 0px #1ba1e2;
 }
 #header a:hover {
   color: #1ba1e2;
@@ -458,7 +458,7 @@ article footer a {
   color: #999;
 }
 article footer a:hover {
-  color: #258fb8;
+  color: #1ba1e2;
   text-decoration: none;
 }
 article footer a:before {
@@ -566,7 +566,7 @@ article footer .addthis iframe {
   margin-bottom: 50px;
 }
 #pagination a:hover {
-  background: #258fb8;
+  background: #1ba1e2;
   color: #fff;
   text-decoration: none;
   text-shadow: none;
@@ -757,10 +757,10 @@ article footer .addthis iframe {
   font-size: 100%;
 }
 .entry .gist .gist-file .gist-meta a {
-  color: #258fb8;
+  color: #1ba1e2;
 }
 .entry .gist .gist-file .gist-meta a:visited {
-  color: #258fb8;
+  color: #1ba1e2;
 }
 figure.highlight {
   background: #eee;
