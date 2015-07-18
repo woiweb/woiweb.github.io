@@ -108,10 +108,11 @@ a:hover {
   color: #999;
 }
 #header a.logo {
-  text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+  color: #1ba1e2;
+  text-shadow: 1px 1px 0px #258fb8;
 }
 #header a:hover {
-  color: #258fb8;
+  color: #1ba1e2;
   text-decoration: none;
 }
 #header h1 {
@@ -288,7 +289,7 @@ article header .title a {
   color: #1ba1e2;
 }
 article header .title a:hover {
-  color: #258fb8;
+  color: #1ba1e2;
   text-decoration: none;
 }
 article .entry {
