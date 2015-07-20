@@ -310,6 +310,43 @@ React.render(&lt;Input/>, document.body);
 <li>shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用</li>
 </ul>
 <p>这些方法的详细说明，可以参考<a href="http://facebook.github.io/react/docs/component-specs.html#lifecycle-methods" target="_blank" rel="external">官方文档</a>。下面是一个例子（查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo09/index.html" target="_blank" rel="external">demo09</a> ）。</p>
+<pre class="brush:js">
+var Hello = React.createClass({
+  getInitialState: function () {
+    return {
+      opacity: 1.0
+    };
+  },
+
+  componentDidMount: function () {
+    this.timer = setInterval(function () {
+      var opacity = this.state.opacity;
+      opacity -= .05;
+      if (opacity &lt; 0.1) {
+        opacity = 1.0;
+      }
+      this.setState({
+        opacity: opacity
+      });
+    }.bind(this), 100);
+  },
+
+  render: function () {
+    return (
+      &lt;div style={opacity: this.state.opacity}>
+        Hello {this.props.name}
+      &lt;/div>
+    );
+  }
+});
+
+React.render(
+  &lt;Hello name="world"/>,
+  document.body
+);
+</pre>
+
+<p>上面代码在hello组件加载以后，通过 componentDidMount 方法设置一个定时器，每隔100毫秒，就重新设置组件的透明度，从而引发重新渲染。</p>
 <p>这是因为 <a href="https://facebook.github.io/react/tips/inline-styles.html" target="_blank" rel="external">React 组件样式</a>是一个对象，所以第一重大括号表示这是 JavaScript 语法，第二重大括号表示样式对象。</p>
 <h3 id="十、Ajax">十、Ajax</h3><p>组件的数据来源，通常是通过 Ajax 请求从服务器获取，可以使用 componentDidMount 方法设置 Ajax 请求，等到请求成功，再用 this.setState 方法重新渲染 UI （查看 <a href="https://github.com/ruanyf/react-demos/blob/master/demo10/index.html" target="_blank" rel="external">demo10</a> ）。</p>
 <pre class="brush:js">
