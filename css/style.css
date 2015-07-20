@@ -109,7 +109,7 @@ a:hover {
 }
 #header a.logo {
   color: #1ba1e2;
-  text-shadow: 1px 1px 0px #1ba1e2;
+  text-shadow: 1px 1px 0px #258fb8;
 }
 #header a:hover {
   color: #1ba1e2;
@@ -710,12 +710,11 @@ article footer .addthis iframe {
   padding: 0 4px;
   margin: 2px 0;
 }
-#sidebar .sidead{
-  margin-bottom 20px;
+#sidebar .sidead {
+  margin-bottom: 20px;
   background: #fff;
   text-align: center;
 }
-    
 #footer {
   color: #999;
   margin-bottom: 50px;
