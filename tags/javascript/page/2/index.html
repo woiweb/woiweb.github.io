@@ -73,11 +73,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2012-02-09T18:53:31.000Z"><a href="/2012/02/10/communicate-with-iframe-in-ie/">2012-02-10</a></time>
             
               <h1 class="title"><a href="/2012/02/10/communicate-with-iframe-in-ie/">IE下因设置document.domain而无法和Iframe通信的解决方法</a></h1>
             
+            <time datetime="2012-02-09T18:53:31.000Z"><a href="/2012/02/10/communicate-with-iframe-in-ie/">2012-02-10</a></time>
           </header>
+          <div class="entry">
+            
+              <p>最近在开发SDK的过程中发现IE下有个很怪异的问题：在同一域下，因在父页面上设置了document.domain，而导致无法正常和Iframe（也是同域下）进行通信，IE下抛出的错误是：<strong>SCRIPT5: 拒绝访问</strong>，导致无法操作iframe中的内容。
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2012/02/10/communicate-with-iframe-in-ie/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -85,11 +97,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2011-12-12T19:33:12.000Z"><a href="/2011/12/13/js-iframe-ajax/">2011-12-13</a></time>
             
               <h1 class="title"><a href="/2011/12/13/js-iframe-ajax/">Js模拟Ajax无刷新提交</a></h1>
             
+            <time datetime="2011-12-12T19:33:12.000Z"><a href="/2011/12/13/js-iframe-ajax/">2011-12-13</a></time>
           </header>
+          <div class="entry">
+            
+              <p>最近在做一个模拟Ajax提交的功能，原理很简单，就是动态创建一个form，并指定其target为页面中的一个隐藏的iframe，当form提交时会提交到这个iframe中，从而实现提交数据，而不刷新当前页面的功能，这个方法多用来做图片或文件上传的功能。
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2011/12/13/js-iframe-ajax/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -97,11 +121,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2011-12-07T22:10:00.000Z"><a href="/2011/12/08/11-javascript-color-pickers-plugins/">2011-12-08</a></time>
             
               <h1 class="title"><a href="/2011/12/08/11-javascript-color-pickers-plugins/">11个javascript拾色器插件</a></h1>
             
+            <time datetime="2011-12-07T22:10:00.000Z"><a href="/2011/12/08/11-javascript-color-pickers-plugins/">2011-12-08</a></time>
           </header>
+          <div class="entry">
+            
+              <p>几年前很难找到一款很好的拾色器，最近我已经看到很多发布的Javascript的拾色器插件，所以我决定把我找到的编辑起来，在本文中，我找到了11款Javascript的拾色器插件。它们中的一些相当复杂而其他的却相当简单，所以我确信总有一款是你所需要的。
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2011/12/08/11-javascript-color-pickers-plugins/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -109,11 +145,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2011-11-21T06:45:00.000Z"><a href="/2011/11/21/about-attributes-usage/">2011-11-21</a></time>
             
               <h1 class="title"><a href="/2011/11/21/about-attributes-usage/">关于attributes的使用</a></h1>
             
+            <time datetime="2011-11-21T06:45:00.000Z"><a href="/2011/11/21/about-attributes-usage/">2011-11-21</a></time>
           </header>
+          <div class="entry">
+            
+              <p>attributes用来检索属于该对象的属性的集合，它也是一个伪数组（可参考上篇文章：<a href="http://www.woiweb.net/htmlcollection-nodelist-transfer-to-array.html" title="Permanent Link to 将HTMLCollection/NodeList/伪数组转换成数组">将HTMLCollection/NodeList/伪数组转换成数组</a>），什么情况下会用到这个对象呢？比如有下面的一段html代码：
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2011/11/21/about-attributes-usage/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -121,11 +169,25 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2011-11-17T21:31:32.000Z"><a href="/2011/11/18/htmlcollection-nodelist-transfer-to-array/">2011-11-18</a></time>
             
               <h1 class="title"><a href="/2011/11/18/htmlcollection-nodelist-transfer-to-array/">将HTMLCollection/NodeList/伪数组转换成数组</a></h1>
             
+            <time datetime="2011-11-17T21:31:32.000Z"><a href="/2011/11/18/htmlcollection-nodelist-transfer-to-array/">2011-11-18</a></time>
           </header>
+          <div class="entry">
+            
+              <p><strong>什么是伪数组</strong></p>
+<p>能通过Array.prototype.slice转换为真正的数组的带有length属性的对象。</p>
+<p>这种对象有很多，比较特别的是arguments对象，document.forms，Form.elements，Select.options还有像调用getElementsByTagName,document.childNodes之类的，它们都返回NodeList对象都属于伪数组。
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2011/11/18/htmlcollection-nodelist-transfer-to-array/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -133,11 +195,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2011-11-03T23:49:38.000Z"><a href="/2011/11/04/ie-document-getelementbyid-bug/">2011-11-04</a></time>
             
               <h1 class="title"><a href="/2011/11/04/ie-document-getelementbyid-bug/">IE下document.getElementById的处理方式</a></h1>
             
+            <time datetime="2011-11-03T23:49:38.000Z"><a href="/2011/11/04/ie-document-getelementbyid-bug/">2011-11-04</a></time>
           </header>
+          <div class="entry">
+            
+              <p>今天在调试之前的一个测试页面时，在IE下发现了一个非常诡异的问题，用document.getElementById取不到预期的值，分析原因后发现，通过getElementById获取节点的时候，IE会把name属性当成id属性来处理。下面给出代码及解决方法，如果大家遇到此问题可以采取本文中的方法来处理。</p>
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2011/11/04/ie-document-getelementbyid-bug/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -145,11 +219,24 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2011-09-22T00:49:17.000Z"><a href="/2011/09/22/10-addictive-games-made-with-javascript/">2011-09-22</a></time>
             
               <h1 class="title"><a href="/2011/09/22/10-addictive-games-made-with-javascript/">10令人上瘾的用Javascript开发的游戏</a></h1>
             
+            <time datetime="2011-09-22T00:49:17.000Z"><a href="/2011/09/22/10-addictive-games-made-with-javascript/">2011-09-22</a></time>
           </header>
+          <div class="entry">
+            
+              <p><strong>警告:</strong> 游戏上瘾者的警告，如果你想保持工作，请不要点击任何这些链接。:P</p>
+<p>过去的几年，多数在线游戏是用Flash制作的，现在，用强大的浏览器和互联网技术，你可以只用 HTML, CSS和Javascript就可以创建游戏！它们使用全3D动画，图形，效果和概念，多数看起来给人以相当深刻的印象。
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2011/09/22/10-addictive-games-made-with-javascript/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -157,11 +244,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2011-09-20T00:44:28.000Z"><a href="/2011/09/20/cross-domain/">2011-09-20</a></time>
             
               <h1 class="title"><a href="/2011/09/20/cross-domain/">跨域技术</a></h1>
             
+            <time datetime="2011-09-20T00:44:28.000Z"><a href="/2011/09/20/cross-domain/">2011-09-20</a></time>
           </header>
+          <div class="entry">
+            
+              <p>在实际开发中，大家会经常遇到<strong>跨域</strong>问题，这时我们就在根据不同的情况选择不同的跨域方式，我整理了一些目前常用的跨域技术与大家分享。
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2011/09/20/cross-domain/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -169,11 +268,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2011-09-17T18:11:07.000Z"><a href="/2011/09/18/9-javascript-and-animated-gif-loading-animation-solutions/">2011-09-18</a></time>
             
               <h1 class="title"><a href="/2011/09/18/9-javascript-and-animated-gif-loading-animation-solutions/">9个javascript和gif动画解决方案</a></h1>
             
+            <time datetime="2011-09-17T18:11:07.000Z"><a href="/2011/09/18/9-javascript-and-animated-gif-loading-animation-solutions/">2011-09-18</a></time>
           </header>
+          <div class="entry">
+            
+              <p>我开始学习制作loading动画是在我学习flash的时候，当时还是flash5。如今，我们看到HTML/CSS/JS的网站，特别是由AJAX驱动的，loading动画是极其有用的让用户知道服务器到此有止处理请求。不要低估它，它可以网站更具有用户交换性。它用于表示在当前场景背后有事情发生，通知用户等一会。
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2011/09/18/9-javascript-and-animated-gif-loading-animation-solutions/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -181,11 +292,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2011-08-11T19:29:36.000Z"><a href="/2011/08/12/50-jquery-snippets-for-developers/">2011-08-12</a></time>
             
               <h1 class="title"><a href="/2011/08/12/50-jquery-snippets-for-developers/">50个jQuery代码段帮你成为更好的JavaScript开发者</a></h1>
             
+            <time datetime="2011-08-11T19:29:36.000Z"><a href="/2011/08/12/50-jquery-snippets-for-developers/">2011-08-12</a></time>
           </header>
+          <div class="entry">
+            
+              <p>今天的帖子会给你们展示50个jQuery代码片段，这些代码能够给你的JavaScript项目提供帮助。其中的一些代码段是从jQuery1.4.2才开始支持的做法，另一些则是真正有用的函数或方法，他们能够帮助你又快又好地把事情完成。这些都是我尽量记住的有着最佳性能的代码段，因此如果你发现你任何可以做得更好的地方的话，欢迎把你的版本粘贴在评论中！我希望你在这一文章中能找到有帮助的东西。<br>
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2011/08/12/50-jquery-snippets-for-developers/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -316,6 +439,10 @@ $(window).load(function(){
 })(jQuery);
 </script>
 
+
+	<link rel="stylesheet" type="text/css" href="http://jssdk.sinaapp.com/css/highlight/shStyle.css" />
+<script src="http://jssdk.sinaapp.com/js/highlight/syntaxHighlighter.js"></script>
+<script>SyntaxHighlighter.all();</script>
 
 
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>

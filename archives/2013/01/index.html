@@ -73,11 +73,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2013-01-10T02:16:02.000Z"><a href="/2013/01/10/button-without-type-problem/">2013-01-10</a></time>
             
               <h1 class="title"><a href="/2013/01/10/button-without-type-problem/">button标签未指定类型导致的问题</a></h1>
             
+            <time datetime="2013-01-10T02:16:02.000Z"><a href="/2013/01/10/button-without-type-problem/">2013-01-10</a></time>
           </header>
+          <div class="entry">
+            
+              <p>今天部门同事分来一bug：新浪微博授权页面mobile版的错误提示黄签不能关闭，查找其原因，发现是黄签关闭后又被显示出来了，很奇怪，但很明显是有哪个地方又触发了它的show方法。然后在js中跟踪发现黄签关闭后又触发了表单提交方法，而提交表单会触发表单校验功能，校验功能会再次显示出黄签来。
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2013/01/10/button-without-type-problem/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -208,6 +220,10 @@ $(window).load(function(){
 })(jQuery);
 </script>
 
+
+	<link rel="stylesheet" type="text/css" href="http://jssdk.sinaapp.com/css/highlight/shStyle.css" />
+<script src="http://jssdk.sinaapp.com/js/highlight/syntaxHighlighter.js"></script>
+<script>SyntaxHighlighter.all();</script>
 
 
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>

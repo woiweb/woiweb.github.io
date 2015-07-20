@@ -73,11 +73,23 @@
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="2012-02-09T18:53:31.000Z"><a href="/2012/02/10/communicate-with-iframe-in-ie/">2012-02-10</a></time>
             
               <h1 class="title"><a href="/2012/02/10/communicate-with-iframe-in-ie/">IE下因设置document.domain而无法和Iframe通信的解决方法</a></h1>
             
+            <time datetime="2012-02-09T18:53:31.000Z"><a href="/2012/02/10/communicate-with-iframe-in-ie/">2012-02-10</a></time>
           </header>
+          <div class="entry">
+            
+              <p>最近在开发SDK的过程中发现IE下有个很怪异的问题：在同一域下，因在父页面上设置了document.domain，而导致无法正常和Iframe（也是同域下）进行通信，IE下抛出的错误是：<strong>SCRIPT5: 拒绝访问</strong>，导致无法操作iframe中的内容。
+              
+            
+          </div>
+
+          <footer>
+            <div class="alignleft">
+              <a href="/2012/02/10/communicate-with-iframe-in-ie/#more" class="more-link">Read More</a>
+            </div>
+          </footer>
         </div>
       </article>
     
@@ -208,6 +220,10 @@ $(window).load(function(){
 })(jQuery);
 </script>
 
+
+	<link rel="stylesheet" type="text/css" href="http://jssdk.sinaapp.com/css/highlight/shStyle.css" />
+<script src="http://jssdk.sinaapp.com/js/highlight/syntaxHighlighter.js"></script>
+<script>SyntaxHighlighter.all();</script>
 
 
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1991828'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/stat.php%3Fid%3D1991828%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
